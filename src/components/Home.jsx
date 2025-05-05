@@ -145,7 +145,7 @@ const Home = () => {
               typingDelay={1000}
             />
             <Description className='mt-3'>
-              Full Stack Developer with 1 year professional experience at Mindmarks as Front-End Developer and Henry Bootcamp as teacher Assitant, specializing in TypeScript and NestJS in backend and React and Tailwind in frontend development. Passionate about building scalable solutions and continuous learning.
+            Full Stack Developer specializing in TypeScript (NestJS/React) with 1+ year of professional experience. Former Frontend Developer at Mindmarks and Teaching Assistant at Henry Bootcamp, with strong skills in building scalable web applications using modern frameworks. Actively seeking new opportunities to deliver high-performance solutions.
             </Description>
           </TextContainer>
           <ProfileImage
