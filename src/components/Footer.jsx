@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiLinkedin, FiGithub, FiMail, FiDownload } from 'react-icons/fi';
+import { useLanguage } from '../hooks/useLanguage.js';
 
 const FooterWrapper = styled.footer`
   background-color: #0a192f;
@@ -102,20 +103,22 @@ const Copyright = styled.div`
 `;
 
 const Footer = () => {
+    const { t } = useLanguage();
+    
     return (
         <FooterWrapper id="contact">
             <Container>
                 <FooterContent>
                     <Row>
                         <Col md={4} className="mb-5">
-                            <SectionTitle>Tomas Munevar</SectionTitle>
+                            <SectionTitle>{t('footerName')}</SectionTitle>
                             <FooterText>
-                                Full Stack Developer passionate about creating innovative and efficient solutions.
+                                {t('footerDescription')}
                             </FooterText>
                         </Col>
 
                         <Col md={4} className="mb-5">
-                            <SectionTitle>Let's Connect</SectionTitle>
+                            <SectionTitle>{t('footerConnect')}</SectionTitle>
                             <SocialList>
                                 <SocialItem>
                                     <SocialLink href="https://www.linkedin.com/in/tom%C3%A1s-mun%C3%A9var-escalante-5ba483212/" target="_blank">
@@ -136,18 +139,18 @@ const Footer = () => {
                         </Col>
 
                         <Col md={4} className="mb-5">
-                            <SectionTitle>My CV</SectionTitle>
+                            <SectionTitle>{t('footerCV')}</SectionTitle>
                             <FooterText>
-                                Download my resume for more professional details.
+                                {t('footerCVDescription')}
                             </FooterText>
                             <CVButton href="/cv.pdf" download>
-                                <FiDownload /> Download CV
+                                <FiDownload /> {t('footerDownload')}
                             </CVButton>
                         </Col>
                     </Row>
 
                     <Copyright>
-                        © {new Date().getFullYear()} Tomas Munevar. All rights reserved.
+                        © {new Date().getFullYear()} Tomas Munevar. {t('footerRights')}
                     </Copyright>
                 </FooterContent>
             </Container>

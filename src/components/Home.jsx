@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TypingEffect from 'react-typing-effect';
-import Navigation from './Navbar';
+import { useLanguage } from '../hooks/useLanguage.js';
 
 const Container = styled.div`
   min-height: 66vh;
@@ -113,7 +113,8 @@ const ProfileImage = styled.img`
   margin-right: 5rem;
   object-fit: cover;
   border-radius: 10px;
-  border: 3px solidrgb(152, 152, 152);
+  /* Fix typo missing space after 'solid' */
+  border: 3px solid rgb(152, 152, 152);
   box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
   transition: all 0.3s ease;
 
@@ -130,31 +131,30 @@ const ProfileImage = styled.img`
 `;
 
 const Home = () => {
+  const { t } = useLanguage();
+  
   return (
-    <>
-      <Navigation />
-      <Container id="home">
-        <ContentWrapper>
-          <TextContainer>
-            <Title>Tomas Munevar Escalante</Title>
-            <TypingSubtitle
-              text={['Full Stack Developer', 'Backend Developer', 'Frontend Developer']}
-              speed={100}
-              eraseSpeed={50}
-              eraseDelay={2000}
-              typingDelay={1000}
-            />
-            <Description className='mt-3'>
-            Full Stack Developer specializing in TypeScript (NestJS/React) with 1+ year of professional experience. Former Frontend Developer at Mindmarks and Teaching Assistant at Henry Bootcamp, with strong skills in building scalable web applications using modern frameworks. Actively seeking new opportunities to deliver high-performance solutions.
-            </Description>
-          </TextContainer>
-          <ProfileImage
-            src="https://res.cloudinary.com/dge1sssip/image/upload/v1744480270/327885691_1244958326091178_3021472840121443350_n_lphrwx.jpg"
-            alt="Tomas Munevar Escalante"
+    <Container id="home">
+      <ContentWrapper>
+        <TextContainer>
+          <Title>{t('homeTitle')}</Title>
+          <TypingSubtitle
+            text={t('homeSubtitles')}
+            speed={100}
+            eraseSpeed={50}
+            eraseDelay={2000}
+            typingDelay={1000}
           />
-        </ContentWrapper>
-      </Container>
-    </>
+          <Description className='mt-3'>
+            {t('homeDescription')}
+          </Description>
+        </TextContainer>
+        <ProfileImage
+          src="https://res.cloudinary.com/dge1sssip/image/upload/v1744480270/327885691_1244958326091178_3021472840121443350_n_lphrwx.jpg"
+          alt="Tomas Munevar Escalante"
+        />
+      </ContentWrapper>
+    </Container>
   );
 };
 

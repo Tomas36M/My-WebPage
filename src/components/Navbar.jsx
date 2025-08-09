@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../hooks/useLanguage.js';
 import styled from 'styled-components';
 
 const StyledNavbar = styled(Navbar)`
@@ -18,24 +20,23 @@ const StyledNavbar = styled(Navbar)`
     padding: 0.5rem 1rem !important;
     transition: all 0.3s ease;
     position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #64ffda;
-      transition: width 0.3s ease;
-    }
+    text-decoration: none !important;
+    border-bottom: none !important;
 
     &:hover {
       color: #64ffda !important;
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
 
-      &::before {
-        width: 100%;
-      }
+    &:focus {
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
+
+    &:active {
+      text-decoration: none !important;
+      border-bottom: none !important;
     }
   }
 
@@ -53,24 +54,103 @@ const Brand = styled(Navbar.Brand)`
   font-family: 'SF Mono', monospace;
   font-size: 1.2rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
 
   &:hover {
     color: #64ffda !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+
+  &:focus {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+`;
+
+const LogoIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #64ffda, #6c63ff);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0a192f;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+  }
+`;
+
+const LogoText = styled.span`
+  font-weight: 600;
+  letter-spacing: 0.5px;
+`;
+
+const LanguageToggle = styled.button`
+  background: transparent;
+  border: 1px solid #2e476b;
+  color: #ccd6f6;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+
+  &:hover {
+    border-color: #64ffda;
+    color: #64ffda;
+    background: rgba(100, 255, 218, 0.1);
   }
 `;
 
 const Navigation = () => {
+  const location = useLocation();
+  const { language, toggleLanguage, t } = useLanguage();
+  
+  const handleHashNav = (e, hash) => {
+    // If we're not on home route, navigate home first then scroll
+    if (location.pathname !== '/') {
+      window.location.href = `/${hash}`;
+      return;
+    }
+    const el = document.querySelector(hash);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <StyledNavbar expand="lg" variant="dark">
       <Container>
-        <Brand href="#home">Tomás Munévar</Brand>
+        <Brand as={Link} to="/">
+          <LogoText>
+            Tomás Munévar
+          </LogoText>
+        </Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
-            <Nav.Link href="#contact">CV</Nav.Link>
+            <Nav.Link href="#home" onClick={(e)=>handleHashNav(e,'#home')}>{t('home')}</Nav.Link>
+            <Nav.Link href="#projects" onClick={(e)=>handleHashNav(e,'#projects')}>{t('projects')}</Nav.Link>
+            <Nav.Link href="#services" onClick={(e)=>handleHashNav(e,'#services')}>{t('services')}</Nav.Link>
+            <Nav.Link href="#contact" onClick={(e)=>handleHashNav(e,'#contact')}>{t('contact')}</Nav.Link>
+            <Nav.Link href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</Nav.Link>
+            <LanguageToggle onClick={toggleLanguage}>
+              {language === 'en' ? 'ES' : 'EN'}
+            </LanguageToggle>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,11 +1,46 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Modal, Button, Card } from 'react-bootstrap';
+import { useLanguage } from '../hooks/useLanguage.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const SectionHeader = styled.div`
+  text-align: center;
+  margin-bottom: 50px;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 2.5rem;
+  color: #ccd6f6;
+  margin-bottom: 1rem;
+  font-family: 'Calibre', sans-serif;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(45deg, #64ffda, #6c63ff);
+    border-radius: 2px;
+  }
+`;
+
+const SectionSubtitle = styled.p`
+  color: #8892b0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+`;
 
 // Project section styles remain unchanged
 const ProjectsSection = styled.section`
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #0a192f;
   min-height: 100vh;
 `;
@@ -115,7 +150,7 @@ const projects = [
   },
   {
     title: "Economist Portfolio",
-    image: "https://res.cloudinary.com/dge1sssip/image/upload/v1744558379/Screenshot_2025-04-13_at_10.32.29_AM_ra0lnu.png",
+    image: "https://res.cloudinary.com/dge1sssip/image/upload/v1754755226/Captura_de_pantalla_2025-08-09_a_la_s_10.58.41_a.m._gyrzuz.png",
     demoLink: "https://www.isabelamunevar.com/",
     repoLink: "https://github.com/Tomas36M/Bela-Web-Page",
     technologies: "Next.js, Bootstrap, React, HTML, CSS, JavaScript",
@@ -150,6 +185,7 @@ const projects = [
 const Projects = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const { t } = useLanguage();
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -163,6 +199,11 @@ const Projects = () => {
 
   return (
     <ProjectsSection id="projects">
+      <SectionHeader>
+        <SectionTitle>{t('projectsTitle')}</SectionTitle>
+        <SectionSubtitle>{t('projectsSubtitle')}</SectionSubtitle>
+      </SectionHeader>
+      
       <ProjectGrid>
         {projects.map((project, index) => (
           <ProjectContainer key={index} onClick={() => openModal(project)}>
