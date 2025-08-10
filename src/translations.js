@@ -8,18 +8,18 @@ export const translations = {
     
     // Home
     homeTitle: 'Tomas Munevar Escalante',
-    homeSubtitles: ['Desarrollador Full Stack', 'Desarrollador Backend', 'Desarrollador Frontend'],
-    homeDescription: 'Desarrollador Full Stack especializado en TypeScript (NestJS/React) con más de 1 año de experiencia profesional. Ex Desarrollador Frontend en Mindmarks y Asistente de Enseñanza en Henry Bootcamp, con sólidas habilidades en la construcción de aplicaciones web escalables utilizando frameworks modernos. Buscando activamente nuevas oportunidades para entregar soluciones de alto rendimiento.',
+    homeSubtitles: ['Desarrollador Full Stack', 'Frontend Developer', 'Especialista en IA'],
+    homeDescription: 'Desarrollador Full Stack especializado en TypeScript y tecnologías modernas. Actualmente trabajando como Frontend Developer en una empresa inmobiliaria de fraccionamiento, desarrollando con Next.js, Tailwind CSS y integrando modelos de IA con OpenAI. Ex Desarrollador Frontend en Mindmarks y Asistente de Enseñanza en Henry Bootcamp, con experiencia en la construcción de aplicaciones web escalables y soluciones inteligentes.',
     
     // Services Preview
     servicesTitle: 'Servicios Freelance',
-    servicesIntro: 'Ofrezco soluciones de desarrollo web personalizadas para impulsar tu negocio con tecnologías modernas y código de calidad profesional.',
+    servicesIntro: 'Ofrezco soluciones de desarrollo web personalizadas e integración de IA para impulsar tu negocio con tecnologías modernas y código de calidad profesional.',
     servicesFullStack: 'Desarrollo Full Stack',
-    servicesFullStackDesc: 'Desarrollo completo de aplicaciones web con React, Node.js y bases de datos modernas.',
-    servicesBackend: 'APIs & Backend',
-    servicesBackendDesc: 'Creación de APIs robustas y escalables con NestJS, Express y documentación completa.',
+    servicesFullStackDesc: 'Desarrollo completo de aplicaciones web con Next.js, React, Node.js y bases de datos modernas.',
+    servicesBackend: 'APIs & IA Integration',
+    servicesBackendDesc: 'Creación de APIs robustas e integración de modelos de IA con OpenAI para soluciones inteligentes.',
     servicesFrontend: 'Frontend Moderno',
-    servicesFrontendDesc: 'Interfaces responsive y atractivas con las últimas tecnologías y mejores prácticas.',
+    servicesFrontendDesc: 'Interfaces responsive y atractivas con Next.js, Tailwind CSS y las mejores prácticas actuales.',
     servicesViewAll: 'Ver Todos los Servicios →',
     
     // Services Full Page
@@ -63,18 +63,18 @@ export const translations = {
     
     // Home
     homeTitle: 'Tomas Munevar Escalante',
-    homeSubtitles: ['Full Stack Developer', 'Backend Developer', 'Frontend Developer'],
-    homeDescription: 'Full Stack Developer specializing in TypeScript (NestJS/React) with 1+ year of professional experience. Former Frontend Developer at Mindmarks and Teaching Assistant at Henry Bootcamp, with strong skills in building scalable web applications using modern frameworks. Actively seeking new opportunities to deliver high-performance solutions.',
+    homeSubtitles: ['Full Stack Developer', 'Frontend Developer', 'AI Specialist'],
+    homeDescription: 'Full Stack Developer specializing in TypeScript and modern technologies. Currently working as Frontend Developer at a real estate fractionalization company, developing with Next.js, Tailwind CSS and integrating AI models with OpenAI. Former Frontend Developer at Mindmarks and Teaching Assistant at Henry Bootcamp, with experience in building scalable web applications and intelligent solutions.',
     
     // Services Preview
     servicesTitle: 'Freelance Services',
-    servicesIntro: 'I offer personalized web development solutions to boost your business with modern technologies and professional-quality code.',
+    servicesIntro: 'I offer personalized web development solutions and AI integration to boost your business with modern technologies and professional-quality code.',
     servicesFullStack: 'Full Stack Development',
-    servicesFullStackDesc: 'Complete web application development with React, Node.js and modern databases.',
-    servicesBackend: 'APIs & Backend',
-    servicesBackendDesc: 'Creation of robust and scalable APIs with NestJS, Express and complete documentation.',
+    servicesFullStackDesc: 'Complete web application development with Next.js, React, Node.js and modern databases.',
+    servicesBackend: 'APIs & AI Integration',
+    servicesBackendDesc: 'Creation of robust APIs and AI model integration with OpenAI for intelligent solutions.',
     servicesFrontend: 'Modern Frontend',
-    servicesFrontendDesc: 'Responsive and attractive interfaces with the latest technologies and best practices.',
+    servicesFrontendDesc: 'Responsive and attractive interfaces with Next.js, Tailwind CSS and current best practices.',
     servicesViewAll: 'View All Services →',
     
     // Services Full Page

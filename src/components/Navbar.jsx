@@ -12,6 +12,14 @@ const StyledNavbar = styled(Navbar)`
   top: 0;
   z-index: 1000;
 
+  .container {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: none !important;
+  }
+
   .nav-link {
     color: #ccd6f6 !important;
     font-family: 'SF Mono', monospace;
@@ -98,21 +106,39 @@ const LogoText = styled.span`
 `;
 
 const LanguageToggle = styled.button`
-  background: transparent;
-  border: 1px solid #2e476b;
-  color: #ccd6f6;
-  padding: 8px 12px;
-  border-radius: 5px;
+  background: linear-gradient(45deg, rgba(100, 255, 218, 0.1), rgba(108, 99, 255, 0.1));
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  padding: 4px 10px;
+  border-radius: 20px;
   font-family: 'SF Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 15px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #64ffda, #6c63ff);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
 
   &:hover {
-    border-color: #64ffda;
-    color: #64ffda;
-    background: rgba(100, 255, 218, 0.1);
+    color: #0a192f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+
+    &::before {
+      left: 0;
+    }
   }
 `;
 
@@ -135,11 +161,16 @@ const Navigation = () => {
   return (
     <StyledNavbar expand="lg" variant="dark">
       <Container>
-        <Brand as={Link} to="/">
-          <LogoText>
-            Tomás Munévar
-          </LogoText>
-        </Brand>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <Brand as={Link} to="/">
+            <LogoText>
+              Tomás Munévar
+            </LogoText>
+          </Brand>
+          <LanguageToggle onClick={toggleLanguage}>
+            🌐 {language === 'en' ? 'ES' : 'EN'}
+          </LanguageToggle>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
@@ -148,9 +179,6 @@ const Navigation = () => {
             <Nav.Link href="#services" onClick={(e)=>handleHashNav(e,'#services')}>{t('services')}</Nav.Link>
             <Nav.Link href="#contact" onClick={(e)=>handleHashNav(e,'#contact')}>{t('contact')}</Nav.Link>
             <Nav.Link href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</Nav.Link>
-            <LanguageToggle onClick={toggleLanguage}>
-              {language === 'en' ? 'ES' : 'EN'}
-            </LanguageToggle>
           </Nav>
         </Navbar.Collapse>
       </Container>
