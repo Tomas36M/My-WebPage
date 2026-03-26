@@ -6,7 +6,7 @@ import { useLanguage } from '../hooks/useLanguage.js';
 const ServicesSection = styled.section`
   min-height: 100vh;
   background-color: #0a192f;
-  padding: 40px 40px 80px; /* extra top for sticky navbar space */
+  padding: 40px 40px 80px;
   color: #ccd6f6;
 `;
 
@@ -105,7 +105,7 @@ const CTABox = styled.div`
   background: #172a45; 
   max-width: 1100px; 
   position: relative; 
-  overflow: visible; /* Changed from hidden to visible for the contact options */
+  overflow: visible;
   
   &::before { 
     content: ''; 
@@ -148,14 +148,14 @@ const ContactOptions = styled.div`
   position: absolute;
   top: -140px;
   left: 50%;
-  transform: translateX(-50%) translateY(${props => props.show ? '0' : '10px'});
+  transform: translateX(-50%) translateY(${props => props.$show ? '0' : '10px'});
   min-width: 280px;
   background: linear-gradient(135deg, #172a45 0%, #203a43 50%, #2c5364 100%);
   border: 2px solid #64ffda;
   border-radius: 16px;
   padding: 24px;
-  opacity: ${props => props.show ? 1 : 0};
-  visibility: ${props => props.show ? 'visible' : 'hidden'};
+  opacity: ${props => props.$show ? 1 : 0};
+  visibility: ${props => props.$show ? 'visible' : 'hidden'};
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   box-shadow: 
@@ -233,12 +233,10 @@ const Services = () => {
   const { t } = useLanguage();
   const [showContactOptions, setShowContactOptions] = useState(false);
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Close contact options when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (showContactOptions && !event.target.closest('[data-contact-menu]')) {
@@ -255,13 +253,13 @@ const Services = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("¡Hola! Me interesa trabajar contigo en un proyecto. ¿Podemos hablar?");
+    const message = encodeURIComponent("¡Hola Tomás! Me interesa trabajar contigo en un proyecto. ¿Podemos hablar?");
     window.open(`https://wa.me/573007970810?text=${message}`, '_blank');
     setShowContactOptions(false);
   };
 
   const handleEmailClick = () => {
-    const subject = encodeURIComponent("Freelance Inquiry");
+    const subject = encodeURIComponent("Proyecto Freelance");
     const body = encodeURIComponent("Hola Tomás,\n\nMe interesa trabajar contigo en un proyecto. ¿Podemos discutir los detalles?\n\nSaludos!");
     window.open(`mailto:tomasmunevar36@gmail.com?subject=${subject}&body=${body}`, '_blank');
     setShowContactOptions(false);
@@ -272,37 +270,37 @@ const Services = () => {
       icon: '🧩',
       title: t('servicesFullStackTitle'),
       description: t('servicesFullStackDescription'),
-      tags: ['React', 'NestJS', 'Node', 'REST', 'PostgreSQL']
+      tags: ['React', 'NestJS', 'Node', 'REST', 'PostgreSQL', 'Next.js']
     },
     {
       icon: '⚙️',
       title: t('servicesBackendTitle'),
       description: t('servicesBackendDescription'),
-      tags: ['TypeScript', 'Clean Arch', 'TypeORM', 'Swagger', 'Auth']
+      tags: ['TypeScript', 'Clean Arch', 'TypeORM', 'Swagger', 'JWT', 'OAuth2']
     },
     {
       icon: '🎨',
       title: t('servicesFrontendTitle'),
       description: t('servicesFrontendDescription'),
-      tags: ['React', 'Styled Components', 'SPA/SSR', 'Responsive']
+      tags: ['React', 'Tailwind', 'Styled Components', 'SPA/SSR', 'Responsive']
+    },
+    {
+      icon: '💳',
+      title: t('servicesSecurityTitle'),
+      description: t('servicesSecurityDescription'),
+      tags: ['Stripe', 'Wompi', 'Webhooks', 'Subscriptions', 'E-commerce']
+    },
+    {
+      icon: '🏥',
+      title: t('servicesConsultingTitle'),
+      description: t('servicesConsultingDescription'),
+      tags: ['FHIR', 'Azure Health', 'Microsoft for Healthcare', 'Interoperability']
     },
     {
       icon: '🚀',
       title: t('servicesOptimizationTitle'),
       description: t('servicesOptimizationDescription'),
-      tags: ['Performance', 'Caching', 'Profiling', 'CI/CD']
-    },
-    {
-      icon: '🛡️',
-      title: t('servicesSecurityTitle'),
-      description: t('servicesSecurityDescription'),
-      tags: ['Validation', 'Security', 'OWASP', 'JWT']
-    },
-    {
-      icon: '📊',
-      title: t('servicesConsultingTitle'),
-      description: t('servicesConsultingDescription'),
-      tags: ['Architecture', 'Mentoring', 'Code Review']
+      tags: ['Performance', 'Caching', 'Profiling', 'CI/CD', 'Docker']
     }
   ];
 
@@ -331,19 +329,19 @@ const Services = () => {
           {t('servicesCTADescription')}
         </CTAText>
         <div style={{ position: 'relative', display: 'inline-block' }} data-contact-menu>
-          <ContactOptions show={showContactOptions}>
+          <ContactOptions $show={showContactOptions}>
             <ContactOption onClick={handleWhatsAppClick}>
               <ContactIcon>📱</ContactIcon>
               <ContactText>
                 <div className="title">WhatsApp</div>
-                <div className="subtitle">Respuesta rápida</div>
+                <div className="subtitle">Respuesta rápida · +57 300 797 0810</div>
               </ContactText>
             </ContactOption>
             <ContactOption onClick={handleEmailClick}>
               <ContactIcon>📧</ContactIcon>
               <ContactText>
                 <div className="title">Email</div>
-                <div className="subtitle">Discusión detallada</div>
+                <div className="subtitle">tomasmunevar36@gmail.com</div>
               </ContactText>
             </ContactOption>
           </ContactOptions>

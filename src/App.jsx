@@ -17,10 +17,10 @@ function App() {
       <HelmetProvider>
         <Router>
           <Helmet>
-            <title>Tomas Munevar | Full Stack Developer</title>
-            <meta name="description" content="Professional portfolio of Tomas Munevar, Full Stack Developer specializing in modern web technologies" />
-            <meta name="keywords" content="Full Stack Developer, React, JavaScript, TypeScript, Node.js, Portfolio, Web Development" />
-            <meta name="author" content="Tomas Munevar" />
+            <title>Tomás Munévar Escalante | Full Stack Developer · Healthcare Tech · Freelance</title>
+            <meta name="description" content="Desarrollador Full Stack especializado en salud digital (Microsoft for Healthcare, FHIR), integración de pasarelas de pago y aplicaciones web escalables con React, NestJS y TypeScript. Disponible para proyectos freelance desde Bogotá, Colombia." />
+            <meta name="keywords" content="Full Stack Developer, React, NestJS, TypeScript, Node.js, Healthcare Tech, Microsoft for Healthcare, FHIR, Azure, Stripe, Payment Gateway, Bogotá, Colombia, Freelance, Portfolio" />
+            <meta name="author" content="Tomás Munévar Escalante" />
           </Helmet>
           <Navigation />
           <Routes>

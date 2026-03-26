@@ -38,7 +38,6 @@ const SectionSubtitle = styled.p`
   line-height: 1.6;
 `;
 
-// Project section styles remain unchanged
 const ProjectsSection = styled.section`
   padding: 80px 20px;
   background-color: #0a192f;
@@ -60,6 +59,7 @@ const ProjectContainer = styled(Card)`
   border: 1px solid #2e476b !important;
   border-radius: 15px !important;
   overflow: hidden;
+  position: relative;
 
   &:hover {
     transform: translateY(-10px);
@@ -87,7 +87,36 @@ const StyledCardTitle = styled(Card.Title)`
   margin: 0;
 `;
 
-// Custom modal styles remain unchanged
+const PrivateBadge = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(45deg, #64ffda, #6c63ff);
+  color: #0a192f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: 'SF Mono', monospace;
+  letter-spacing: 0.5px;
+  z-index: 2;
+`;
+
+const FreelanceBadge = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(45deg, #6c63ff, #ff6584);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: 'SF Mono', monospace;
+  letter-spacing: 0.5px;
+  z-index: 2;
+`;
+
 const StyledModal = styled(Modal)`
   .modal-content {
     background-color: #0a192f;
@@ -109,16 +138,6 @@ const StyledModal = styled(Modal)`
   .modal-footer {
     border-top: 1px solid #2e476b;
   }
-
-  .close {
-    color: #ccd6f6;
-    text-shadow: none;
-    opacity: 0.8;
-    
-    &:hover {
-      opacity: 1;
-    }
-  }
 `;
 
 const TechPill = styled.span`
@@ -131,7 +150,36 @@ const TechPill = styled.span`
   font-size: 0.9rem;
 `;
 
+const CopyrightNote = styled.p`
+  color: #64ffda;
+  font-size: 0.8rem;
+  font-family: 'SF Mono', monospace;
+  border-top: 1px solid #2e476b;
+  padding-top: 12px;
+  margin-top: 12px;
+  opacity: 0.8;
+`;
+
 const projects = [
+  {
+    title: "Nebula — AI Clinical Documentation Platform",
+    image: "/nebula-screenshot.png",
+    demoLink: "https://nebula.med/",
+    repoLink: null,
+    isPrivate: true,
+    technologies: "TypeScript, NestJS, React, Node.js, PostgreSQL, Azure, FHIR, HL7, AI / LLMs",
+    description: "AI-powered clinical documentation platform developed at Nebula Medical. The platform features Scribe, an AI voice transcription system that transforms doctor-patient conversations into precise clinical notes in real time. Integrates FHIR and HL7 interoperability standards to connect with existing EHR systems. Built to reduce up to 70% of note-writing time and help prevent physician burnout — enabling doctors to focus on patient care rather than administrative work.",
+    copyright: "© 2025 Nebula Medical. All Rights Reserved. This is a corporate project; source code is proprietary and confidential.",
+  },
+  {
+    title: "DentalVets — Dental Care for Pets",
+    image: "https://s0.wp.com/mshots/v1/https://dentalvets.com.co/?w=800",
+    demoLink: "https://dentalvets.com.co/",
+    repoLink: null,
+    isFreelance: true,
+    technologies: "HTML5, CSS3, JavaScript, React, Responsive Design, WhatsApp Integration",
+    description: "Freelance project: landing page designed and developed for DentalVets, a veterinary dental care service based in Bogotá, Colombia. Features include service protocol showcase, before/after gallery, customer testimonials, product catalog, WhatsApp contact integration and a fully mobile-responsive layout. Built to help the business attract new clients online.",
+  },
   {
     title: "Inventory Manager - Gestocker",
     image: "https://res.cloudinary.com/dge1sssip/image/upload/v1744500935/Screenshot_2025-04-12_at_6.34.50_PM_dcq3cx.png",
@@ -153,6 +201,7 @@ const projects = [
     image: "https://res.cloudinary.com/dge1sssip/image/upload/v1754755226/Captura_de_pantalla_2025-08-09_a_la_s_10.58.41_a.m._gyrzuz.png",
     demoLink: "https://www.isabelamunevar.com/",
     repoLink: "https://github.com/Tomas36M/Bela-Web-Page",
+    isFreelance: true,
     technologies: "Next.js, Bootstrap, React, HTML, CSS, JavaScript",
     description: "A web application designed to showcase an economist's portfolio. Users can explore projects and work samples while learning about the professional's experience and skills. The platform features an intuitive interface for easy navigation and data visualization. Users can access different portfolio sections including featured projects, publications, and contact information. The portfolio is designed to be scalable and adaptable for various professionals.",
   },
@@ -164,22 +213,6 @@ const projects = [
     technologies: "JavaScript, React, HTML, CSS, Axios",
     description: "Pokedex is a web application that lets users explore and search for information about different Pokémon using the PokeAPI. The platform features an intuitive interface for easy navigation and data search. Users can view details about each Pokémon including stats, abilities, and evolutions. The application is designed to be responsive and adaptable to different devices from desktops to mobile phones.",
   },
-  {
-    title: "Ecommerce API - Swagger Documentation",
-    image: "https://res.cloudinary.com/dge1sssip/image/upload/v1746286000/Captura_de_pantalla_2025-05-03_a_la_s_10.26.17_a.m._wyb8hd.png",
-    demoLink: "https://ecommerce-nest-p3xi.onrender.com/docs",
-    repoLink: "https://github.com/Tomas36M/Ecommerce-Nest",
-    technologies: "Nest.js, Swagger, PostgreSQL, TypeORM, TypeScript, Node.js, Express, Swagger, RESTful API, JWT, Bcrypt, Docker, Auth0",
-    description: "Ecommerce API is a web application designed to manage an e-commerce system. It allows users to perform operations like registration, login, product management, and order processing. The platform features an intuitive interface for easy navigation and data management. Users can add, edit, and delete products while tracking orders. The API is designed to be scalable and adaptable to different business types from small online stores to large e-commerce platforms.",
-  },
-  {
-    title: "Inventory Manager API - Swagger Documentation",
-    image: "https://res.cloudinary.com/dge1sssip/image/upload/v1746288846/Captura_de_pantalla_2025-05-03_a_la_s_11.12.41_a.m._kpddsh.png",
-    demoLink: "https://gestocker-back.onrender.com/docs",
-    repoLink: "https://github.com/GeStocker/GeStocker-Back",
-    technologies: "Nest.js, Swagger, PostgreSQL, TypeORM, TypeScript, Node.js, Express, Swagger, RESTful API, JWT, Bcrypt, Docker, Auth0, Socket.io, Stripe",
-    description: "Gestocker is a web application designed for inventory and sales management, enabling users to efficiently control products and transactions. The platform features an intuitive interface for easy navigation and data management. Users can add, edit, and delete products while tracking sales and generating detailed reports. The system is designed to be scalable and adaptable to different business sizes from small shops to large enterprises.",
-  }
 ];
 
 const Projects = () => {
@@ -207,6 +240,8 @@ const Projects = () => {
       <ProjectGrid>
         {projects.map((project, index) => (
           <ProjectContainer key={index} onClick={() => openModal(project)}>
+            {project.isPrivate && <PrivateBadge>🔒 Corporativo</PrivateBadge>}
+            {project.isFreelance && <FreelanceBadge>⭐ Freelance</FreelanceBadge>}
             <ProjectImage variant="top" src={project.image} alt={project.title} />
             <Card.Body>
               <StyledCardTitle>{project.title}</StyledCardTitle>
@@ -236,37 +271,48 @@ const Projects = () => {
               <p style={{ lineHeight: '1.6', marginBottom: '25px' }}>
                 {selectedProject.description}
               </p>
-              <div className="d-flex gap-3">
-                <Button 
-                  variant="primary" 
-                  href={selectedProject.demoLink} 
-                  target="_blank"
-                  style={{
-                    backgroundColor: '#6c63ff',
-                    border: 'none',
-                    padding: '10px 25px',
-                    borderRadius: '5px',
-                    fontWeight: '600'
-                  }}
-                >
-                  View Demo
-                </Button>
-                <Button 
-                  variant="secondary" 
-                  href={selectedProject.repoLink} 
-                  target="_blank"
-                  style={{
-                    backgroundColor: '#2e476b',
-                    border: 'none',
-                    padding: '10px 25px',
-                    borderRadius: '5px',
-                    fontWeight: '600',
-                    color: '#ccd6f6'
-                  }}
-                >
-                  Repository
-                </Button>
-              </div>
+              {selectedProject.copyright && (
+                <CopyrightNote>
+                  {selectedProject.copyright}
+                </CopyrightNote>
+              )}
+              {(selectedProject.demoLink || selectedProject.repoLink) && (
+                <div className="d-flex gap-3 flex-wrap">
+                  {selectedProject.demoLink && (
+                    <Button 
+                      variant="primary" 
+                      href={selectedProject.demoLink} 
+                      target="_blank"
+                      style={{
+                        backgroundColor: '#6c63ff',
+                        border: 'none',
+                        padding: '10px 25px',
+                        borderRadius: '5px',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Ver Demo
+                    </Button>
+                  )}
+                  {selectedProject.repoLink && (
+                    <Button 
+                      variant="secondary" 
+                      href={selectedProject.repoLink} 
+                      target="_blank"
+                      style={{
+                        backgroundColor: '#2e476b',
+                        border: 'none',
+                        padding: '10px 25px',
+                        borderRadius: '5px',
+                        fontWeight: '600',
+                        color: '#ccd6f6'
+                      }}
+                    >
+                      Repositorio
+                    </Button>
+                  )}
+                </div>
+              )}
             </>
           )}
         </Modal.Body>
@@ -280,14 +326,9 @@ const Projects = () => {
               color: '#ff4d4d',
               fontWeight: '600',
               transition: 'all 0.3s',
-              
-              '&:hover': {
-                backgroundColor: '#ff4d4d',
-                color: '#fff'
-              }
             }}
           >
-            Close
+            Cerrar
           </Button>
         </Modal.Footer>
       </StyledModal>

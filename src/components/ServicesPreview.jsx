@@ -25,18 +25,32 @@ const SectionTitle = styled.h2`
   width: 100%;
 `;
 
+const FreelancePill = styled.span`
+  display: inline-block;
+  background: linear-gradient(45deg, rgba(100, 255, 218, 0.15), rgba(108, 99, 255, 0.15));
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: 'SF Mono', monospace;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+`;
+
 const Intro = styled.p`
   color: #8892b0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
-  max-width: 800px;
-  margin: 2.5rem auto 3rem;
-  line-height: 1.6;
+  max-width: 750px;
+  margin: 1.5rem auto 3rem;
+  line-height: 1.7;
 `;
 
 const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 3rem;
 `;
@@ -82,7 +96,7 @@ const ServiceIcon = styled.div`
 
 const ServiceTitle = styled.h3`
   color: #ccd6f6;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   font-family: 'SF Mono', monospace;
 `;
@@ -91,6 +105,35 @@ const ServiceDescription = styled.p`
   color: #8892b0;
   font-size: 0.95rem;
   line-height: 1.6;
+`;
+
+const TrustRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 0 auto 3rem;
+  max-width: 700px;
+`;
+
+const TrustItem = styled.div`
+  text-align: center;
+
+  .number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #64ffda, #6c63ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'SF Mono', monospace;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    color: #8892b0;
+    margin-top: 4px;
+    font-family: 'SF Mono', monospace;
+  }
 `;
 
 const CTAContainer = styled.div`
@@ -102,9 +145,9 @@ const CTAButton = styled.button`
   background: linear-gradient(45deg, #64ffda, #6c63ff);
   color: #0a192f;
   border: none;
-  padding: 15px 35px;
+  padding: 15px 40px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   font-family: 'SF Mono', monospace;
@@ -114,7 +157,7 @@ const CTAButton = styled.button`
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
   }
 
   &:active {
@@ -137,12 +180,12 @@ const ServicesPreview = () => {
       description: t('servicesFullStackDesc')
     },
     {
-      icon: '⚡',
+      icon: '💳',
       title: t('servicesBackend'),
       description: t('servicesBackendDesc')
     },
     {
-      icon: '🎨',
+      icon: '🏥',
       title: t('servicesFrontend'),
       description: t('servicesFrontendDesc')
     }
@@ -151,10 +194,28 @@ const ServicesPreview = () => {
   return (
     <ServicesSection id="services">
       <Container>
+        <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+          <FreelancePill>✦ DISPONIBLE PARA FREELANCE</FreelancePill>
+        </div>
         <SectionTitle>{t('servicesTitle')}</SectionTitle>
         <Intro>
           {t('servicesIntro')}
         </Intro>
+
+        <TrustRow>
+          <TrustItem>
+            <div className="number">5+</div>
+            <div className="label">Proyectos entregados</div>
+          </TrustItem>
+          <TrustItem>
+            <div className="number">24h</div>
+            <div className="label">Tiempo de respuesta</div>
+          </TrustItem>
+          <TrustItem>
+            <div className="number">100%</div>
+            <div className="label">Código limpio</div>
+          </TrustItem>
+        </TrustRow>
         
         <ServicesGrid>
           {services.map((service, index) => (
