@@ -87,35 +87,6 @@ const StyledCardTitle = styled(Card.Title)`
   margin: 0;
 `;
 
-const PrivateBadge = styled.span`
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: linear-gradient(45deg, #64ffda, #6c63ff);
-  color: #0a192f;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-family: 'SF Mono', monospace;
-  letter-spacing: 0.5px;
-  z-index: 2;
-`;
-
-const FreelanceBadge = styled.span`
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: linear-gradient(45deg, #6c63ff, #ff6584);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-family: 'SF Mono', monospace;
-  letter-spacing: 0.5px;
-  z-index: 2;
-`;
 
 const StyledModal = styled(Modal)`
   .modal-content {
@@ -240,8 +211,6 @@ const Projects = () => {
       <ProjectGrid>
         {projects.map((project, index) => (
           <ProjectContainer key={index} onClick={() => openModal(project)}>
-            {project.isPrivate && <PrivateBadge>🔒 Corporativo</PrivateBadge>}
-            {project.isFreelance && <FreelanceBadge>⭐ Freelance</FreelanceBadge>}
             <ProjectImage variant="top" src={project.image} alt={project.title} />
             <Card.Body>
               <StyledCardTitle>{project.title}</StyledCardTitle>
