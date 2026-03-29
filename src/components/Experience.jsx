@@ -144,7 +144,7 @@ const projects = [
   },
   {
     title: "DentalVets — Dental Care for Pets",
-    image: "https://s0.wp.com/mshots/v1/https://dentalvets.com.co/?w=800",
+    image: "/dentalvets-screenshot.png",
     demoLink: "https://dentalvets.com.co/",
     repoLink: null,
     isFreelance: true,
