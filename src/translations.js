@@ -9,7 +9,7 @@ export const translations = {
     // Home
     homeTitle: 'Tomás Munévar Escalante',
     homeSubtitles: ['Desarrollador Full Stack', 'Integración de IA · LLMs & LangChain', 'Healthcare Tech · FHIR/HL7', 'Integración de Pasarelas de Pago', 'Abierto a Nuevas Oportunidades'],
-    homeDescription: 'Desarrollador Full Stack especializado en TypeScript (Next.js / NestJS / React) con 2+ años de experiencia profesional. Historial comprobado construyendo plataformas clínicas con IA, integraciones de LLMs (LangChain, OpenAI, Anthropic, Gemini), transcripción de voz (Deepgram) y pipelines de procesamiento de documentos. Experiencia en infraestructura cloud (Azure, AWS, Docker), interoperabilidad en salud (FHIR/HL7) e integración de pasarelas de pago. Ex Frontend Developer en Crowdi & Mindmarks, y Teaching Assistant en Henry Bootcamp. Disponible para nuevas oportunidades y proyectos freelance.',
+    homeDescription: 'Full Stack Developer especializado en TypeScript (Next.js / NestJS / React) con 2+ años de experiencia profesional. Historial comprobado construyendo plataformas clínicas con IA, integraciones de LLMs (LangChain, OpenAI, Anthropic, Gemini), transcripción de voz (Deepgram) y pipelines de procesamiento de documentos. Experiencia en infraestructura cloud (Azure, AWS, Docker), interoperabilidad en salud (FHIR/HL7) e integración de pasarelas de pago. Disponible para nuevas oportunidades y proyectos freelance.',
     
     // Services Preview
     servicesTitle: 'Servicios Freelance',
@@ -64,7 +64,7 @@ export const translations = {
     // Home
     homeTitle: 'Tomás Munévar Escalante',
     homeSubtitles: ['Full Stack Developer', 'AI & LLM Integration · LangChain', 'Healthcare Tech · FHIR/HL7', 'Payment Gateway Integration', 'Open to New Opportunities'],
-    homeDescription: 'Full Stack Developer specializing in TypeScript (Next.js / NestJS / React) with 2+ years of professional experience. Proven track record building AI-powered clinical platforms with LLM integrations (LangChain, OpenAI, Anthropic, Gemini), voice transcription (Deepgram), and document processing pipelines. Experienced in cloud infrastructure (Azure, AWS, Docker), healthcare interoperability (FHIR/HL7), and payment gateway integrations. Former Frontend Developer at Crowdi & Mindmarks, and Teaching Assistant at Henry Bootcamp. Available for new opportunities and freelance projects.',
+    homeDescription: 'Full Stack Developer specializing in TypeScript (Next.js / NestJS / React) with 2+ years of professional experience. Proven track record building AI-powered clinical platforms with LLM integrations (LangChain, OpenAI, Anthropic, Gemini), voice transcription (Deepgram), and document processing pipelines. Experienced in cloud infrastructure (Azure, AWS, Docker), healthcare interoperability (FHIR/HL7), and payment gateway integrations. Available for new opportunities and freelance projects.',
     
     // Services Preview
     servicesTitle: 'Freelance Services',
