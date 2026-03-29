@@ -17,9 +17,9 @@ function App() {
       <HelmetProvider>
         <Router>
           <Helmet>
-            <title>Tomás Munévar Escalante | Full Stack Developer · Healthcare Tech · Freelance</title>
-            <meta name="description" content="Desarrollador Full Stack especializado en salud digital (Microsoft for Healthcare, FHIR), integración de pasarelas de pago y aplicaciones web escalables con React, NestJS y TypeScript. Disponible para proyectos freelance desde Bogotá, Colombia." />
-            <meta name="keywords" content="Full Stack Developer, React, NestJS, TypeScript, Node.js, Healthcare Tech, Microsoft for Healthcare, FHIR, Azure, Stripe, Payment Gateway, Bogotá, Colombia, Freelance, Portfolio" />
+            <title>Tomás Munévar Escalante | Full Stack Developer · AI · Healthcare Tech</title>
+            <meta name="description" content="Full Stack Developer especializado en TypeScript (NestJS/React/Next.js), integración de LLMs (LangChain, OpenAI, Anthropic, Gemini), healthcare tech (FHIR/HL7) y pasarelas de pago. Disponible para nuevas oportunidades y proyectos freelance." />
+            <meta name="keywords" content="Full Stack Developer, React, NestJS, Next.js, TypeScript, LangChain, OpenAI, Anthropic, Gemini, Deepgram, AI, LLM, Healthcare Tech, FHIR, HL7, Azure, AWS, Docker, Stripe, Payment Gateway, Bogotá, Colombia, Freelance" />
             <meta name="author" content="Tomás Munévar Escalante" />
           </Helmet>
           <Navigation />

@@ -8,8 +8,8 @@ export const translations = {
     
     // Home
     homeTitle: 'Tomás Munévar Escalante',
-    homeSubtitles: ['Desarrollador Full Stack', 'Backend Developer · NestJS & Node', 'Healthcare Tech Developer', 'Integración de Pasarelas de Pago', 'Freelance Software Engineer'],
-    homeDescription: 'Desarrollador Full Stack en Nebula Medical, plataforma de documentación clínica con IA que ayuda a médicos a reducir hasta un 70% el tiempo en notas clínicas. Trabajo con TypeScript, NestJS, React y estándares FHIR/HL7. Experiencia en integración de pasarelas de pago y sistemas de salud interoperables. Ex Frontend Developer en Crowdi y Mindmarks, y Teaching Assistant en Henry Bootcamp.',
+    homeSubtitles: ['Desarrollador Full Stack', 'Integración de IA · LLMs & LangChain', 'Healthcare Tech · FHIR/HL7', 'Integración de Pasarelas de Pago', 'Abierto a Nuevas Oportunidades'],
+    homeDescription: 'Desarrollador Full Stack especializado en TypeScript (Next.js / NestJS / React) con 2+ años de experiencia profesional. Historial comprobado construyendo plataformas clínicas con IA, integraciones de LLMs (LangChain, OpenAI, Anthropic, Gemini), transcripción de voz (Deepgram) y pipelines de procesamiento de documentos. Experiencia en infraestructura cloud (Azure, AWS, Docker), interoperabilidad en salud (FHIR/HL7) e integración de pasarelas de pago. Ex Frontend Developer en Crowdi & Mindmarks, y Teaching Assistant en Henry Bootcamp. Disponible para nuevas oportunidades y proyectos freelance.',
     
     // Services Preview
     servicesTitle: 'Servicios Freelance',
@@ -47,7 +47,7 @@ export const translations = {
     
     // Footer
     footerName: 'Tomás Munévar',
-    footerDescription: 'Desarrollador Full Stack especializado en salud digital, pasarelas de pago y aplicaciones web escalables. Disponible para proyectos freelance.',
+    footerDescription: 'Desarrollador Full Stack especializado en IA, salud digital, pasarelas de pago y aplicaciones web escalables. Disponible para nuevas oportunidades y proyectos freelance.',
     footerConnect: 'Conectemos',
     footerCV: 'Mi CV',
     footerCVDescription: 'Descarga mi currículum para más detalles profesionales.',
@@ -63,8 +63,8 @@ export const translations = {
     
     // Home
     homeTitle: 'Tomás Munévar Escalante',
-    homeSubtitles: ['Full Stack Developer', 'Backend Developer · NestJS & Node', 'Healthcare Tech Developer', 'Payment Gateway Integration', 'Freelance Software Engineer'],
-    homeDescription: 'Full Stack Developer at Nebula Medical, an AI-powered clinical documentation platform that helps doctors reduce up to 70% of note-writing time. I work with TypeScript, NestJS, React, and FHIR/HL7 interoperability standards. Experienced in payment gateway integrations and digital health systems. Former Frontend Developer at Crowdi & Mindmarks, and Teaching Assistant at Henry Bootcamp.',
+    homeSubtitles: ['Full Stack Developer', 'AI & LLM Integration · LangChain', 'Healthcare Tech · FHIR/HL7', 'Payment Gateway Integration', 'Open to New Opportunities'],
+    homeDescription: 'Full Stack Developer specializing in TypeScript (Next.js / NestJS / React) with 2+ years of professional experience. Proven track record building AI-powered clinical platforms with LLM integrations (LangChain, OpenAI, Anthropic, Gemini), voice transcription (Deepgram), and document processing pipelines. Experienced in cloud infrastructure (Azure, AWS, Docker), healthcare interoperability (FHIR/HL7), and payment gateway integrations. Former Frontend Developer at Crowdi & Mindmarks, and Teaching Assistant at Henry Bootcamp. Available for new opportunities and freelance projects.',
     
     // Services Preview
     servicesTitle: 'Freelance Services',
@@ -102,7 +102,7 @@ export const translations = {
     
     // Footer
     footerName: 'Tomás Munévar',
-    footerDescription: 'Full Stack Developer specialized in digital health, payment gateways and scalable web applications. Available for freelance projects.',
+    footerDescription: 'Full Stack Developer specialized in AI/LLM integrations, digital health, payment gateways and scalable web applications. Available for new opportunities and freelance projects.',
     footerConnect: "Let's Connect",
     footerCV: 'My CV',
     footerCVDescription: 'Download my resume for more professional details.',
