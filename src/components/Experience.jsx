@@ -177,12 +177,14 @@ const projects = [
     description: "A web application designed to showcase an economist's portfolio. Users can explore projects and work samples while learning about the professional's experience and skills. The platform features an intuitive interface for easy navigation and data visualization. Users can access different portfolio sections including featured projects, publications, and contact information. The portfolio is designed to be scalable and adaptable for various professionals.",
   },
   {
-    title: "Pokedex using PokeAPI",
-    image: "https://res.cloudinary.com/dge1sssip/image/upload/v1746285423/Captura_de_pantalla_2025-05-03_a_la_s_10.16.24_a.m._fkiqua.png",
-    demoLink: "https://pokedex-pokeapi-tomasmunevar-d62aae.netlify.app/",
-    repoLink: "https://github.com/Tomas36M/Pokedex",
-    technologies: "JavaScript, React, HTML, CSS, Axios",
-    description: "Pokedex is a web application that lets users explore and search for information about different Pokémon using the PokeAPI. The platform features an intuitive interface for easy navigation and data search. Users can view details about each Pokémon including stats, abilities, and evolutions. The application is designed to be responsive and adaptable to different devices from desktops to mobile phones.",
+    title: "Crowdi — Real Estate Fractionalization Platform",
+    image: "/crowdi-screenshot.png",
+    demoLink: "https://crowdi.ar/",
+    repoLink: null,
+    isPrivate: true,
+    technologies: "React, TypeScript, Next.js, Node.js, PostgreSQL, Tailwind CSS",
+    description: "Corporate platform developed in collaboration with the Crowdi team. Crowdi digitalizes and fractionalizes real estate projects across Latin America, allowing developers to access new investors and markets through digitized property fractions. The platform handles investment flows, digital contract signing, user onboarding, and project management — all fully remote and legally compliant per country.",
+    copyright: "© 2024 Crowdi. Todos los derechos reservados. Proyecto corporativo propietario y confidencial.",
   },
 ];
 
