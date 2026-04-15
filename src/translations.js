@@ -7,7 +7,7 @@ export const translations = {
     contact: 'Contacto',
     
     // Home
-    homeTitle: 'Tomás Munévar Escalante',
+    homeTitle: 'Tomás Munévar',
     homeSubtitles: ['Desarrollador Full Stack', 'Integración de IA · LLMs & LangChain', 'Healthcare Tech · FHIR/HL7', 'Integración de Pasarelas de Pago', 'Abierto a Nuevas Oportunidades'],
     homeDescription: 'Full Stack Developer especializado en TypeScript (Next.js / NestJS / React) con 2+ años de experiencia profesional. Historial comprobado construyendo plataformas clínicas con IA, integraciones de LLMs (LangChain, OpenAI, Anthropic, Gemini), transcripción de voz (Deepgram) y pipelines de procesamiento de documentos. Experiencia en infraestructura cloud (Azure, AWS, Docker), interoperabilidad en salud (FHIR/HL7) e integración de pasarelas de pago. Disponible para nuevas oportunidades y proyectos freelance.',
     
