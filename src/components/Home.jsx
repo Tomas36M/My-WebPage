@@ -151,7 +151,7 @@ const Home = () => {
         </TextContainer>
         <ProfileImage
           src="https://res.cloudinary.com/dge1sssip/image/upload/v1754758956/462582772_10229403398162980_5072953741625358888_n_orhiiq.jpg"
-          alt="Tomas Munevar Escalante"
+          alt="Tomas Munevar"
         />
       </ContentWrapper>
     </Container>

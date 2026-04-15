@@ -62,7 +62,7 @@ export const translations = {
     contact: 'Contact',
     
     // Home
-    homeTitle: 'Tomás Munévar Escalante',
+    homeTitle: 'Tomás Munévar',
     homeSubtitles: ['Full Stack Developer', 'AI & LLM Integration · LangChain', 'Healthcare Tech · FHIR/HL7', 'Payment Gateway Integration', 'Open to New Opportunities'],
     homeDescription: 'Full Stack Developer specializing in TypeScript (Next.js / NestJS / React) with 2+ years of professional experience. Proven track record building AI-powered clinical platforms with LLM integrations (LangChain, OpenAI, Anthropic, Gemini), voice transcription (Deepgram), and document processing pipelines. Experienced in cloud infrastructure (Azure, AWS, Docker), healthcare interoperability (FHIR/HL7), and payment gateway integrations. Available for new opportunities and freelance projects.',
     
