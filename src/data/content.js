@@ -186,9 +186,9 @@ export const content = {
 
     about: {
       eyebrow: 'Perfil',
-      title: 'No me contratan para escribir código.',
+      title: 'Mi trabajo es que algo exista.',
       reveal:
-        'Me contratan para que algo exista: un agente que llama por teléfono y actualiza una base de datos, un sistema que convierte una consulta médica en una nota clínica, un constructor de encuestas que un ministerio de educación usa para evaluar su sistema de admisión. Elijo la tecnología después de entender el problema, nunca antes.',
+        'Un agente que llama por teléfono y actualiza una base de datos. Un sistema que convierte una consulta médica en una nota clínica. Un constructor de encuestas detrás de una investigación de Yale con la Javeriana. Escribo el código y además decido qué hay que construir: elijo la tecnología después de entender el problema, nunca antes.',
       body: [
         'Soy ingeniero full stack especializado en TypeScript y en llevar modelos de lenguaje a producción de verdad: con límites de gasto, trazas, versionado de prompts, permisos por fila y un plan para cuando el proveedor se cae.',
         'He trabajado en salud digital (FHIR/HL7, transcripción clínica), en investigación educativa con universidades e instituciones públicas, en fintech y en mi propia empresa. En todos los casos me tocó lo mismo: entender el negocio, decidir la arquitectura, escribirla y sostenerla.',
@@ -504,9 +504,9 @@ export const content = {
 
     about: {
       eyebrow: 'About',
-      title: 'Nobody hires me to write code.',
+      title: 'My job is to make things exist.',
       reveal:
-        'They hire me to make something exist: an agent that calls people on the phone and updates a database, a system that turns a doctor visit into a clinical note, a survey engine an education ministry uses to evaluate its admissions system. I pick the technology after I understand the problem, never before.',
+        'An agent that calls people on the phone and updates a database. A system that turns a doctor visit into a clinical note. A survey engine behind a Yale research study with Universidad Javeriana. I write the code, and I also decide what needs building: I pick the technology after I understand the problem, never before.',
       body: [
         'I am a full stack engineer specialised in TypeScript and in taking language models to real production: with spend caps, traces, prompt versioning, row-level permissions and a plan for when the provider goes down.',
         'I have worked in digital health (FHIR/HL7, clinical transcription), in education research with universities and public institutions, in fintech, and in my own company. Every time the job was the same: understand the business, decide the architecture, write it, keep it alive.',
