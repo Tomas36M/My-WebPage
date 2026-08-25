@@ -22,7 +22,7 @@
          bloque se aplica una sola vez, así que la página 2 arrancaba pegada al
          borde. Los laterales quedan en 0 para que las barras grises sigan
          llegando a sangre. */
-      margin: 34pt 0 24pt;
+      margin: 30pt 0 20pt;
     }
 
     * {
@@ -88,18 +88,18 @@
       line-height: 24pt;
       letter-spacing: 0.9pt;
       /* A sangre completa: se extiende sobre el margen de la página. */
-      margin: 13pt -49.7pt 0;
+      margin: 10pt -49.7pt 0;
       padding: 3pt 49.7pt 3pt 49.7pt;
     }
 
     .band + .entries {
-      margin-top: 13pt;
+      margin-top: 11pt;
     }
 
     /* ---------- Entradas de experiencia / formación ---------- */
 
     .entry {
-      margin-bottom: 8pt;
+      margin-bottom: 6pt;
       break-inside: avoid;
     }
 
@@ -133,7 +133,7 @@
       padding-left: 19pt;
       margin-left: 5pt;
       text-align: justify;
-      line-height: 14.4pt;
+      line-height: 13.9pt;
     }
 
     li::before {
@@ -163,13 +163,52 @@
     .skills li {
       margin-left: 0;
       padding-left: 14pt;
-      line-height: 15.5pt;
+      line-height: 13.6pt;
       text-align: left;
     }
 
     .skills li::before {
       left: 1pt;
       top: 6pt;
+    }
+
+    /* ---------- Referencias ---------- */
+
+    .refs {
+      display: grid;
+      /* Tres columnas: en dos, los cinco nombres ocupaban tres filas y el
+         bloque se caía a una página nueva casi vacía. */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7pt 22pt;
+      margin: 10pt 0 0 5pt;
+    }
+
+    .ref {
+      break-inside: avoid;
+      line-height: 13.5pt;
+    }
+
+    .ref__name {
+      display: block;
+      font-weight: 700;
+      font-size: 11pt;
+      letter-spacing: 0.3pt;
+    }
+
+    .ref__org {
+      display: block;
+      font-size: 10pt;
+      line-height: 12.5pt;
+    }
+
+    .ref__link {
+      display: block;
+      margin-top: 1.5pt;
+      font-size: 8pt;
+      line-height: 10pt;
+      color: #444;
+      text-decoration: none;
+      word-break: break-all;
     }
   </style>
 </head>
@@ -381,6 +420,35 @@
         </ul>
       </div>
 
+    </div>
+
+    <div class="band">REFERENCES</div>
+    <div class="refs">
+      <div class="ref">
+        <span class="ref__name">Gloria Bernal, Ph.D.</span>
+        <span class="ref__org">Pontificia Universidad Javeriana</span>
+        <a class="ref__link" href="https://www.linkedin.com/in/gloria-luc%C3%ADa-bernal-nisperuza-ph-d-1569b334/">linkedin.com/in/gloria-lucía-bernal-nisperuza-ph-d-1569b334</a>
+      </div>
+      <div class="ref">
+        <span class="ref__name">Christopher Neilson</span>
+        <span class="ref__org">ConsiliumBots · Tether Education</span>
+        <a class="ref__link" href="https://www.linkedin.com/in/christopher-a-neilson/">linkedin.com/in/christopher-a-neilson</a>
+      </div>
+      <div class="ref">
+        <span class="ref__name">Victor Camacho</span>
+        <span class="ref__org">Nebula Medical</span>
+        <a class="ref__link" href="https://www.linkedin.com/in/victor-camacho-vicjustlikethat/">linkedin.com/in/victor-camacho-vicjustlikethat</a>
+      </div>
+      <div class="ref">
+        <span class="ref__name">Pablo Eitner</span>
+        <span class="ref__org">Crowdi</span>
+        <a class="ref__link" href="https://www.linkedin.com/in/pabloeitnermontanez/">linkedin.com/in/pabloeitnermontanez</a>
+      </div>
+      <div class="ref">
+        <span class="ref__name">Matias Camba</span>
+        <span class="ref__org">Soy Henry</span>
+        <a class="ref__link" href="https://www.linkedin.com/in/matiascamba/">linkedin.com/in/matiascamba</a>
+      </div>
     </div>
   </div>
 </body>

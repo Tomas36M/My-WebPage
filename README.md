@@ -72,6 +72,8 @@ Antes de publicar conviene correr Lighthouse contra `npm run preview`.
 
 ## Pendientes
 
+- Las referencias del CV son públicas: `cv.pdf` se sirve desde el sitio y es indexable.
+  Si alguna de esas cinco personas pide salir, se quita de `cv/cv.html` y se reexporta.
 - El CV conserva dos erratas del original que se dejaron a propósito: `/Prisma` con barra
   suelta y `Cron Jobs` repetido en dos columnas de SKILLS.
 - La experiencia más antigua del CV empieza en nov 2023; el resumen dice "4+ years". Si hace
