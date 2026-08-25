@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="TetherEd">
+  <rect width="100" height="100" rx="26" fill="#12123F"/>
+  <circle cx="59" cy="42" r="18.5" fill="none" stroke="#2FDCC1" stroke-width="11"/>
+  <circle cx="42" cy="59" r="14" fill="none" stroke="#6E5CF0" stroke-width="10"/>
+</svg>

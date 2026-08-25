@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Gestocker">
+  <rect width="100" height="100" rx="24" fill="#141C27"/>
+  <rect x="24" y="58" width="52" height="15" rx="5" fill="#3EDBB0"/>
+  <rect x="31" y="38" width="38" height="15" rx="5" fill="#2BA1E8"/>
+  <rect x="38" y="18" width="24" height="15" rx="5" fill="#8A6CF0"/>
+</svg>

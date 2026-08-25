@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Tomás Munévar Escalante — CV</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CV de Tomás Munévar. Réplica del original hecho en Pages.
+       Fuentes del original: Trebuchet MS Bold (nombre) + Calibri
+       (todo lo demás). Calibri no es libre: se usa Carlito, que es
+       métricamente idéntica, así los saltos de línea coinciden.
+       Medidas en pt, tomadas del PDF original.
+       ============================================================ */
+
+    @page {
+      size: A4;
+      /* Los márgenes verticales van aquí y no en el contenedor: el padding de un
+         bloque se aplica una sola vez, así que la página 2 arrancaba pegada al
+         borde. Los laterales quedan en 0 para que las barras grises sigan
+         llegando a sangre. */
+      margin: 34pt 0 24pt;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Carlito', Calibri, sans-serif;
+      font-size: 11pt;
+      line-height: 14.3pt;
+      color: #000;
+      background: #fff;
+    }
+
+    .page {
+      width: 595.28pt;
+      padding: 0 49.7pt;
+    }
+
+    /* ---------- Encabezado ---------- */
+
+    .name {
+      font-family: 'Trebuchet MS', sans-serif;
+      font-weight: 700;
+      font-size: 24pt;
+      line-height: 27pt;
+      letter-spacing: 0.2pt;
+    }
+
+    .contact {
+      font-weight: 700;
+      font-size: 11pt;
+      line-height: 15pt;
+      letter-spacing: 0.1pt;
+    }
+
+    .role {
+      font-weight: 700;
+      font-size: 14pt;
+      line-height: 18pt;
+      letter-spacing: 0.9pt;
+      margin-top: 9pt;
+    }
+
+    .summary {
+      text-align: justify;
+      margin-top: 6pt;
+    }
+
+    /* ---------- Barra de sección ---------- */
+
+    .band {
+      background: #d9d9d9;
+      font-weight: 700;
+      font-size: 14pt;
+      line-height: 24pt;
+      letter-spacing: 0.9pt;
+      /* A sangre completa: se extiende sobre el margen de la página. */
+      margin: 13pt -49.7pt 0;
+      padding: 3pt 49.7pt 3pt 49.7pt;
+    }
+
+    .band + .entries {
+      margin-top: 13pt;
+    }
+
+    /* ---------- Entradas de experiencia / formación ---------- */
+
+    .entry {
+      margin-bottom: 8pt;
+      break-inside: avoid;
+    }
+
+    .entry__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12pt;
+      font-size: 12pt;
+      line-height: 16pt;
+      margin-left: -5pt;
+    }
+
+    .entry__title {
+      font-weight: 700;
+      letter-spacing: 0.5pt;
+    }
+
+    .entry__date {
+      white-space: nowrap;
+      letter-spacing: 0.5pt;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 3pt;
+    }
+
+    li {
+      position: relative;
+      padding-left: 19pt;
+      margin-left: 5pt;
+      text-align: justify;
+      line-height: 14.4pt;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      left: 6pt;
+      top: 6pt;
+      width: 4pt;
+      height: 4pt;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    /* ---------- Aptitudes en tres columnas ---------- */
+
+    .skills {
+      display: flex;
+      gap: 40pt;
+      margin: 12pt 0 0 34pt;
+    }
+
+    .skills ul {
+      flex: 1;
+      margin-top: 0;
+    }
+
+    .skills li {
+      margin-left: 0;
+      padding-left: 14pt;
+      line-height: 15.5pt;
+      text-align: left;
+    }
+
+    .skills li::before {
+      left: 1pt;
+      top: 6pt;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="name">TOMÁS MUNÉVAR ESCALANTE</div>
+    <div class="contact">Bogota, Colombia | tomasmunevar36@gmail.com | www.tomasmunevaresca.com</div>
+
+    <div class="role">FULL STACK DEVELOPER</div>
+    <p class="summary">
+      Full Stack Developer specializing in TypeScript (Next.js / NestJS / React) with 4+ years of professional
+      experience. Proven track record building AI-powered platforms with LLM integrations (LangChain, OpenAI,
+      Anthropic, Gemini), voice agents and transcription (Deepgram, ElevenLabs), and document processing pipelines.
+      Experienced in cloud infrastructure (Azure, AWS, GCP, Docker), healthcare interoperability (FHIR/HL7), and
+      payment gateway integrations. Available for new opportunities and freelance projects.
+    </p>
+
+    <div class="band">WORK EXPERIENCE</div>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Teacher Assistant | Soy Henry Bootcamp</span>
+          <span class="entry__date">Jan 2025 - May 2025</span>
+        </div>
+        <ul>
+          <li>Technical mentor for bootcamp students, troubleshooting issues with different technologies</li>
+          <li>Technical leadership · Clear communication · Debugging · Agile/Scrum · Empathetic teaching.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Frontend Developer | MindMarks</span>
+          <span class="entry__date">Nov 2023 - Mar 2024</span>
+        </div>
+        <ul>
+          <li>Collaborated in an agile team to build a finance blog for Davivienda</li>
+          <li>Participated in code reviews and followed Git Flow practices to ensure clean, version-controlled code.</li>
+          <li>React, JavaScript, HTML5, CSS3, Git, Agile/Scrum</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Backend Developer (NESTJS) | Gestocker | Collaborative Project</span>
+          <span class="entry__date">Feb 2025 - Apr 2025</span>
+        </div>
+        <ul>
+          <li>Implementation of a roles and authentication system with JWT and OAuth2.0.</li>
+          <li>Secure payment integration with Stripe and email notifications using Nodemailer.</li>
+          <li>API documentation with Swagger for better maintainability.</li>
+          <li>Modular and scalable architecture, facilitating future updates.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Frontend Developer | Crowdi</span>
+          <span class="entry__date">Apr 2025 - Aug 2025</span>
+        </div>
+        <ul>
+          <li>Development of UI components and pages for a fintech platform using React and TypeScript.</li>
+          <li>Implemented responsive interfaces following design specs with Tailwind CSS.</li>
+          <li>Collaborated within an agile team with iterative delivery cycles and peer code reviews.</li>
+          <li>Maintained clean, modular component architecture following best practices.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Full Stack Developer | Product Manager | Nebula Medical</span>
+          <span class="entry__date">Aug 2025 - Apr 2026</span>
+        </div>
+        <ul>
+          <li>Built Scribe, an AI-powered clinical documentation platform integrating multiple LLM providers (OpenAI,
+            Anthropic, Gemini) via LangChain with LangSmith tracing for observability.</li>
+          <li>Implemented voice-to-text transcription pipelines using Deepgram SDK and document parsing with structured
+            data extraction from PDFs and images.</li>
+          <li>Developed a microservice payment gateway (gRPC + Express) handling subscription flows, integrated with
+            Stripe and Wompi.</li>
+          <li>Migrated file storage infrastructure to Azure Blob Storage and integrated Azure Communication Email and
+            Azure MSAL for enterprise authentication.</li>
+          <li>Built FHIR-compliant health data export and managed background jobs with Trigger.dev for archival and
+            cleanup processes.</li>
+          <li>Containerized services with Docker and managed cloud infrastructure with Terraform.</li>
+          <li>Integrated Clerk and Azure Entra ID (MSAL) for enterprise authentication flows, supporting both social
+            login and organizational SSO.</li>
+          <li>Built pixel-perfect, responsive interfaces with Next.js App Router, React 19, Tailwind CSS 4, and Framer
+            Motion for smooth UI animations across the clinical platform</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Full Stack &amp; AI Engineer | ConsiliumBots · Tether Education</span>
+          <span class="entry__date">Jun 2026 - Present</span>
+        </div>
+        <ul>
+          <li>Built Module Flow Engine, a drag-and-drop survey and flow builder with conditional routers, repetition,
+            and Handlebars variable piping, deployed continuously to Firebase Hosting.</li>
+          <li>Shipped a 42-module conditional instrument to production for a Yale research study run together with
+            Pontificia Universidad Javeriana, including per-family personalized links generated from CSV.</li>
+          <li>Built LUCI's voice validation pipeline: ElevenLabs phone agents that call childcare centres and write
+            back to the database, an HMAC-signed post-call webhook with idempotent logging, and cron dispatch with
+            daily call caps and retry escalation.</li>
+          <li>Delivered Tether Studio's product app (TanStack Start, React 19, Supabase) with strict row-level security
+            per role and consent-gated AI photo editing.</li>
+          <li>React, TypeScript, Supabase, PostgreSQL, Edge Functions (Deno), ElevenLabs, Firebase Hosting.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Founder | Principal Engineer | Zakumi Estudio</span>
+          <span class="entry__date">Jun 2026 - Present</span>
+        </div>
+        <ul>
+          <li>Built and deployed a WhatsApp sales and support agent powered by Claude, handling real customer
+            conversations for local businesses.</li>
+          <li>Developed the admin control centre: a Google Places prospecting map, a CRM pipeline that writes automatic
+            notes via database triggers, and a bot console with side-by-side prompt diff, rollback and a test chat.</li>
+          <li>Built a customer 360 view with recurring revenue tracking, contracted products and an upsell engine.</li>
+          <li>Next.js 16, TypeScript, Supabase, Google Places API, GSAP, Vercel.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="band">SKILLS</div>
+    <!-- Columnas explícitas para respetar el reparto del original;
+         column-count las reequilibra por altura y los mueve de sitio. -->
+    <div class="skills">
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>React.js</li>
+        <li>Next.js</li>
+        <li>Tailwind CSS</li>
+        <li>Figma</li>
+        <li>Express</li>
+        <li>Clerk / Entra</li>
+        <li>Cron Jobs</li>
+      </ul>
+      <ul>
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>NestJS</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+        <li>/Prisma</li>
+        <li>TypeORM</li>
+        <li>JWT</li>
+        <li>OAuth2</li>
+        <li>Docker</li>
+        <li>FHIR / HL7</li>
+      </ul>
+      <ul>
+        <li>Swagger</li>
+        <li>gRPC</li>
+        <li>Zod</li>
+        <li>LangChain</li>
+        <li>LangSmith</li>
+        <li>Braintrust</li>
+        <li>OpenAI / Anthropic / Gemini</li>
+        <li>Deepgram</li>
+        <li>Azure / AWS</li>
+        <li>Git / GitHub / GitLab</li>
+        <li>Cron Jobs</li>
+      </ul>
+    </div>
+
+    <div class="band">EDUCATION</div>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Full Stack Developer | Henry Bootcamp</span>
+          <span class="entry__date">Nov 2024 - May 2025</span>
+        </div>
+        <ul>
+          <li>Mastered advanced concepts through 800+ intensive hours of hands-on coding</li>
+          <li>Built production-ready apps using MERN stack with TypeScript integration</li>
+          <li>Implemented professional workflows (Git, Agile, CI/CD) in team projects</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">Master en Coding | Dev.F</span>
+          <span class="entry__date">Jan 2021 - Jan 2022</span>
+        </div>
+        <ul>
+          <li>Learned fundamental programming concepts through practical exercises</li>
+          <li>Developed problem-solving skills with basic algorithms and data structures</li>
+          <li>Gained collaboration experience through pair programming sessions</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__title">C1 English Certificate | CONINGLES</span>
+          <span class="entry__date">Feb 2015 – Feb 2017</span>
+        </div>
+        <ul>
+          <li>Acquired comprehensive skills in English grammar and vocabulary, enhancing both academic and professional
+            language capabilities.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
