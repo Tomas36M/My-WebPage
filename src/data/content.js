@@ -164,11 +164,11 @@ export const content = {
 
     hero: {
       eyebrow: 'Full Stack · IA · Producto',
-      titleA: 'Construyo plataformas de IA que ',
-      titleAccent: 'llegan a producción.',
+      titleA: 'Construyo plataformas de IA para ',
+      titleAccent: 'salud, educación y fintech.',
       titleB: '',
       roles: ['Full Stack Engineer', 'AI / LLM Engineer', 'Product Engineer'],
-      lede: '+4 años construyendo producto de punta a punta: TypeScript, agentes de IA que hacen trabajo real y la infraestructura que los mantiene en pie. Hoy trabajo con la Pontificia Universidad Javeriana, ConsiliumBots y Tether Studio en plataformas que usan gobiernos, colegios y clínicas.',
+      lede: '+4 años construyendo producto de punta a punta: TypeScript, agentes de IA y la infraestructura que los mantiene en pie. Hoy trabajo con la Pontificia Universidad Javeriana, ConsiliumBots y Tether Studio en plataformas que usan gobiernos, colegios y clínicas.',
       ctaWork: 'Ver el trabajo',
       ctaTalk: 'Hablemos',
       available: 'Abierto a roles senior · remoto',
@@ -215,7 +215,7 @@ export const content = {
       items: [
         {
           title: 'Sistemas de IA en producción',
-          body: 'Agentes que hacen trabajo real, no demos. Orquestación multi-modelo (Anthropic, OpenAI, Gemini) con LangChain y LangSmith, voz con Deepgram y ElevenLabs, versionado de prompts con diff y rollback, dry-run cuando falta un secreto y topes de gasto por día.',
+          body: 'Orquestación multi-modelo (Anthropic, OpenAI, Gemini) con LangChain y LangSmith, voz con Deepgram y ElevenLabs, versionado de prompts con diff y rollback, dry-run cuando falta un secreto y topes de gasto por día.',
           tags: ['LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG', 'Evals']
         },
         {
@@ -239,8 +239,7 @@ export const content = {
     work: {
       eyebrow: 'Trabajo seleccionado',
       title: 'Siete que valen la pena contar.',
-      subtitle:
-        'Plataformas reales, con usuarios reales. Algunas son código propietario: cuento lo que puedo contar.',
+      subtitle: 'Algunas son código propietario: cuento lo que puedo contar.',
       viewCase: 'Ver el caso',
       visit: 'Visitar sitio',
       repo: 'Repositorio',
@@ -482,11 +481,11 @@ export const content = {
 
     hero: {
       eyebrow: 'Full Stack · AI · Product',
-      titleA: 'I build AI platforms that ',
-      titleAccent: 'actually ship.',
+      titleA: 'I build AI platforms for ',
+      titleAccent: 'health, education and fintech.',
       titleB: '',
       roles: ['Full Stack Engineer', 'AI / LLM Engineer', 'Product Engineer'],
-      lede: '+4 years building product end to end: TypeScript, AI agents that do real work, and the infrastructure that keeps them standing. Today I work with Pontificia Universidad Javeriana, ConsiliumBots and Tether Studio on platforms used by governments, schools and clinics.',
+      lede: '+4 years building product end to end: TypeScript, AI agents, and the infrastructure that keeps them standing. Today I work with Pontificia Universidad Javeriana, ConsiliumBots and Tether Studio on platforms used by governments, schools and clinics.',
       ctaWork: 'See the work',
       ctaTalk: "Let's talk",
       available: 'Open to senior roles · remote',
@@ -533,7 +532,7 @@ export const content = {
       items: [
         {
           title: 'AI systems in production',
-          body: 'Agents that do real work, not demos. Multi-model orchestration (Anthropic, OpenAI, Gemini) with LangChain and LangSmith, voice with Deepgram and ElevenLabs, prompt versioning with diff and rollback, dry-run when a secret is missing, and daily spend caps.',
+          body: 'Multi-model orchestration (Anthropic, OpenAI, Gemini) with LangChain and LangSmith, voice with Deepgram and ElevenLabs, prompt versioning with diff and rollback, dry-run when a secret is missing, and daily spend caps.',
           tags: ['LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG', 'Evals']
         },
         {
@@ -557,7 +556,7 @@ export const content = {
     work: {
       eyebrow: 'Selected work',
       title: 'Seven worth talking about.',
-      subtitle: 'Real platforms with real users. Some are proprietary — I tell what I can tell.',
+      subtitle: 'Some are proprietary — I tell what I can tell.',
       viewCase: 'Read the case',
       visit: 'Visit site',
       repo: 'Repository',
