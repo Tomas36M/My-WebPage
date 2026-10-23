@@ -1,6 +1,3 @@
-import { Suspense, lazy } from 'react';
-
-const ParticleImage = lazy(() => import('../components/effects/ParticleImage.jsx'));
 import ShinyText from '../components/reactbits/ShinyText.jsx';
 import SplitText from '../components/reactbits/SplitText.jsx';
 import RotatingText from '../components/reactbits/RotatingText.jsx';
@@ -89,16 +86,20 @@ const Hero = () => {
         </div>
 
         <div className="hero__portrait">
-          <Suspense fallback={<div className="hero__particles" />}>
-            <ParticleImage
-              src={PROFILE.photo}
-              alt={PROFILE.name}
-              className="hero__particles"
-              overlap={2.05}
-              dispersion={1.05}
-              assemble={2.6}
-            />
-          </Suspense>
+          {/* Foto real con su fondo, fundida en los bordes. Entra con CSS. Sin
+              prioridad alta: el LCP es el párrafo del hero, y la foto no debe
+              quitarle ancho de banda al CSS y a las fuentes en móvil. */}
+          <img
+            className="hero__photo rise"
+            style={{ '--rise-delay': '0.12s' }}
+            src={PROFILE.photo}
+            srcSet={`${PROFILE.photoSmall} 600w, ${PROFILE.photo} 1100w`}
+            sizes="(min-width: 980px) 42vw, 92vw"
+            alt={PROFILE.name}
+            width="1100"
+            height="1375"
+            decoding="async"
+          />
           <span className="hero__portrait-caption mono-label">
             {PROFILE.short} — {PROFILE.location}
           </span>

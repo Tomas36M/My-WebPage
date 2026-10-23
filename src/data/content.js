@@ -13,29 +13,25 @@ export const PROFILE = {
   site: 'https://www.tomasmunevaresca.com',
   cv: '/cv.pdf',
   location: 'Bogotá, Colombia',
-  /* Recorte de retrato servido por Cloudinary: encuadre cerrado para que el
-     efecto de partículas siga siendo legible a tamaño pequeño. */
-  photo:
-    'https://res.cloudinary.com/dge1sssip/image/upload/f_auto,c_thumb,g_face,z_0.32,w_900,h_1125,q_auto/v1754758956/462582772_10229403398162980_5072953741625358888_n_orhiiq.jpg',
+  /* Retrato 4:5 con su fondo original; el hero funde los bordes con CSS. */
+  photo: '/retrato.webp',
+  photoSmall: '/retrato-600.webp',
   /* Recorte cerrado a la cara, para la tarjeta de contacto. */
-  photoFace:
-    'https://res.cloudinary.com/dge1sssip/image/upload/f_auto,c_thumb,g_face,z_0.72,w_360,h_360,q_auto/v1754758956/462582772_10229403398162980_5072953741625358888_n_orhiiq.jpg',
-  photoFull:
-    'https://res.cloudinary.com/dge1sssip/image/upload/v1754758956/462582772_10229403398162980_5072953741625358888_n_orhiiq.jpg'
+  photoFace: '/retrato-cara.webp'
 };
 
-/* Orden = orden en el grid. Los 7 que venden. */
+/* Orden = orden en el grid. Los 7 que venden. Las posiciones 1-2 y 6-7 son tarjeta grande. */
 export const PROJECTS = [
   {
-    id: 'nebula',
-    name: 'Nebula · Scribe',
-    years: '2025 — 2026',
-    image: '/nebula-screenshot.webp',
-    href: 'https://nebula.med/',
+    id: 'daleen',
+    name: 'Daleen',
+    years: '2026 →',
+    image: '/project-daleen.webp',
+    href: 'https://daleen.vercel.app',
     repo: null,
     confidential: true,
-    accent: '#4c6fff',
-    tech: ['TypeScript', 'NestJS', 'React', 'LangChain', 'Deepgram', 'Azure', 'FHIR / HL7', 'gRPC', 'PostgreSQL']
+    accent: '#7b61ff',
+    tech: ['Next.js 16', 'TypeScript', 'API REST', 'Claude', 'WhatsApp Business', 'WebGL', 'Vitest', 'Vercel']
   },
   {
     id: 'luci',
@@ -47,6 +43,17 @@ export const PROJECTS = [
     confidential: true,
     accent: '#8ea8d8',
     tech: ['React', 'Vite', 'Supabase', 'ElevenLabs', 'Twilio', 'Edge Functions', 'Deno', 'PostgreSQL']
+  },
+  {
+    id: 'nebula',
+    name: 'Nebula · Scribe',
+    years: '2025 — 2026',
+    image: '/nebula-screenshot.webp',
+    href: 'https://nebula.med/',
+    repo: null,
+    confidential: true,
+    accent: '#4c6fff',
+    tech: ['TypeScript', 'NestJS', 'React', 'LangChain', 'Deepgram', 'Azure', 'FHIR / HL7', 'gRPC', 'PostgreSQL']
   },
   {
     id: 'moduleFlow',
@@ -69,17 +76,6 @@ export const PROJECTS = [
     confidential: true,
     accent: '#22d3ee',
     tech: ['TanStack Start', 'React 19', 'Tailwind 4', 'Supabase', 'RLS', 'Edge Functions', 'IA generativa']
-  },
-  {
-    id: 'zakumi',
-    name: 'Zakumi Estudio',
-    years: '2026 →',
-    image: '/project-zakumi.webp',
-    href: 'https://zakumistudio.com',
-    repo: null,
-    confidential: false,
-    accent: '#db5227',
-    tech: ['Next.js 16', 'TypeScript', 'Supabase', 'Claude', 'Google Places', 'GSAP', 'Vercel']
   },
   {
     id: 'medispro',
@@ -113,7 +109,7 @@ export const ORGS = [
   { name: 'Tether Education', logo: '/logos/tethered.svg' },
   { name: 'Nebula Medical', logo: '/logos/nebula.webp' },
   { name: 'Crowdi', logo: '/logos/crowdi-mark.webp' },
-  { name: 'Zakumi Estudio', logo: '/logos/zakumi.webp' }
+  { name: 'Daleen', logo: '/logos/daleen.svg' }
 ];
 
 export const STACK = [
@@ -150,7 +146,7 @@ export const content = {
     meta: {
       title: 'Tomás Munévar — Full Stack & AI Engineer',
       description:
-        'Ingeniero de software con 4+ años construyendo plataformas de IA en producción. TypeScript, LLMs, agentes de voz y la infraestructura que los sostiene. Trabajo con la Pontificia Universidad Javeriana, ConsiliumBots y Tether Studio desde Bogotá.'
+        'CTO de Daleen. Cuatro años largos construyendo producto con IA: agentes de WhatsApp y de voz, CRM, plataformas para salud y educación, y la infraestructura que los sostiene. Desde Bogotá.'
     },
 
     nav: {
@@ -163,12 +159,12 @@ export const content = {
     },
 
     hero: {
-      eyebrow: 'Full Stack · IA · Producto',
-      titleA: 'Construyo plataformas de IA para ',
-      titleAccent: 'salud, educación y fintech.',
+      eyebrow: 'CTO · IA · Producto',
+      titleA: 'Construyo la IA y el software que ',
+      titleAccent: 'hacen crecer negocios.',
       titleB: '',
-      roles: ['Full Stack Engineer', 'AI / LLM Engineer', 'Product Engineer'],
-      lede: '+4 años construyendo producto de punta a punta: TypeScript, agentes de IA y la infraestructura que los mantiene en pie. Hoy trabajo con la Pontificia Universidad Javeriana, ConsiliumBots y Tether Studio en plataformas que usan gobiernos, colegios y clínicas.',
+      roles: ['CTO · Daleen', 'AI / LLM Engineer', 'Full Stack Engineer'],
+      lede: 'Cuatro años largos construyendo producto de punta a punta. Hoy soy CTO de Daleen: llevo el CRM, los agentes de IA por WhatsApp y el software de más de 25 negocios en Colombia, Panamá y Estados Unidos. Antes construí plataformas de IA para salud y educación con Nebula, ConsiliumBots y la Pontificia Universidad Javeriana.',
       ctaWork: 'Ver el trabajo',
       ctaTalk: 'Hablemos',
       available: 'Abierto a roles senior · remoto',
@@ -179,7 +175,7 @@ export const content = {
       { text: '+4 años', label: 'construyendo producto de punta a punta' },
       { value: 12, suffix: '', label: 'Productos en producción' },
       { value: 5, suffix: '', label: 'Industrias: salud, educación, fintech, retail, medios' },
-      { value: 3, suffix: '', label: 'Países: Colombia, Chile, España' }
+      { value: 5, suffix: '', label: 'Países: Colombia, Panamá, Estados Unidos, Chile, España' }
     ],
 
     trust: { label: 'He construido con' },
@@ -188,23 +184,23 @@ export const content = {
       eyebrow: 'Perfil',
       title: 'Mi trabajo es que algo exista.',
       reveal:
-        'Un agente que llama por teléfono y actualiza una base de datos. Un sistema que convierte una consulta médica en una nota clínica. Un constructor de encuestas detrás de una investigación de Yale con la Javeriana. Escribo el código y además decido qué hay que construir: elijo la tecnología después de entender el problema, nunca antes.',
+        'Un agente que atiende por WhatsApp a los clientes de una aseguradora y les agenda la cita. Un agente que llama por teléfono y actualiza una base de datos. Un sistema que convierte una consulta médica en una nota clínica. Un constructor de encuestas detrás de una investigación de Yale con la Javeriana. Escribo el código y además decido qué hay que construir: elijo la tecnología después de entender el problema, nunca antes.',
       body: [
         'Soy ingeniero full stack especializado en TypeScript y en llevar modelos de lenguaje a producción de verdad: con límites de gasto, trazas, versionado de prompts, permisos por fila y un plan para cuando el proveedor se cae.',
-        'He trabajado en salud digital (FHIR/HL7, transcripción clínica), en investigación educativa con universidades e instituciones públicas, en fintech y en mi propia empresa. En todos los casos me tocó lo mismo: entender el negocio, decidir la arquitectura, escribirla y sostenerla.',
+        'He trabajado en salud digital (FHIR/HL7, transcripción clínica), en investigación educativa con universidades e instituciones públicas, en fintech y en mi propia empresa, Zakumi Estudio, que hoy es parte de Daleen. En todos los casos me tocó lo mismo: entender el negocio, decidir la arquitectura, escribirla y sostenerla.',
         'Escribo, documento y dejo el trabajo listo para que otro lo tome. Español nativo, inglés C1.'
       ],
       nowLabel: 'Ahora mismo',
       now: [
-        'Agentes de voz que llaman a jardines infantiles y actualizan sus datos, en LUCI.',
-        'El centro de control de Zakumi: prospección, cobros y bots en un solo panel.',
-        'Encuestas condicionales para investigación educativa, usadas en tres países.'
+        'Un agente de IA que atiende por WhatsApp a los clientes de una aseguradora, incluidos los reportes de siniestro.',
+        'El portal propio de Daleen CRM: un solo acceso para la agencia y sus 29 negocios.',
+        'Automatizaciones de venta para los clientes de Daleen: compras, carritos abandonados y avisos de leads nuevos.'
       ],
       factsLabel: 'Datos',
       facts: [
         ['Base', 'Bogotá, Colombia · remoto'],
         ['Idiomas', 'Español nativo · Inglés C1'],
-        ['Enfoque', 'IA aplicada, producto y plataforma'],
+        ['Hoy', 'CTO de Daleen'],
         ['Disponible', 'Roles senior full stack / IA']
       ]
     },
@@ -215,8 +211,8 @@ export const content = {
       items: [
         {
           title: 'Sistemas de IA en producción',
-          body: 'Orquestación multi-modelo (Anthropic, OpenAI, Gemini) con LangChain y LangSmith, voz con Deepgram y ElevenLabs, versionado de prompts con diff y rollback, dry-run cuando falta un secreto y topes de gasto por día.',
-          tags: ['LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG', 'Evals']
+          body: 'Agentes de WhatsApp que venden, atienden y agendan conectados al CRM. Orquestación multi-modelo (Anthropic, OpenAI, Gemini) con LangChain y LangSmith, voz con Deepgram y ElevenLabs, versionado de prompts con diff y rollback, dry-run cuando falta un secreto y topes de gasto por día.',
+          tags: ['WhatsApp', 'LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG']
         },
         {
           title: 'Ingeniería de producto de punta a punta',
@@ -230,7 +226,7 @@ export const content = {
         },
         {
           title: 'Criterio de producto y liderazgo',
-          body: 'Specs, ADRs e issues listos para que otro los tome. He llevado pivotes completos de producto junto a fundadores e investigadores, y he sido el puente entre el equipo técnico y quien firma el cheque.',
+          body: 'Hoy dirijo la tecnología de Daleen. Specs, ADRs e issues listos para que otro los tome. He llevado pivotes completos de producto junto a fundadores e investigadores, y he sido el puente entre el equipo técnico y quien firma el cheque.',
           tags: ['PRDs', 'ADRs', 'Discovery', 'Mentoría', 'Trato con cliente']
         }
       ]
@@ -302,17 +298,17 @@ export const content = {
           'Buckets privados por colegio, URLs firmadas, validación de correo y confirmación de celular por código.'
         ]
       },
-      zakumi: {
-        role: 'Fundador · Ingeniero principal',
-        tagline: 'Estudio AI-first y su centro de control',
+      daleen: {
+        role: 'CTO',
+        tagline: 'CRM, agentes de IA y software para negocios',
         summary:
-          'Mi propia empresa: agentes de IA que venden y atienden por WhatsApp, más el panel donde se prospecta, se cobra y se opera todo.',
+          'Daleen vende CRM, agentes de IA y software a medida a más de 25 negocios en Colombia, Panamá y Estados Unidos. En septiembre de 2026 mi empresa, Zakumi Estudio, se fusionó con Daleen: sus agentes de WhatsApp y voz son hoy el motor del asistente de IA, y yo llevo la tecnología.',
         highlights: [
-          'Agente de WhatsApp con Claude, desplegado y atendiendo negocios reales.',
-          'Centro de control con mapa de prospección sobre Google Places y CRM con pipeline y notas automáticas por trigger de base de datos.',
-          'Consola de bots: editor de prompts con diff lado a lado y rollback, chat de pruebas, semáforo de salud y apagado de emergencia.',
-          'Ficha 360 del cliente con ingreso recurrente, productos contratados y motor de upsell.',
-          'Negocio registrado en la Cámara de Comercio de Bogotá. Diseño, marca y landing con GSAP también míos.'
+          'Portal propio sobre Daleen CRM: se entra con el correo del CRM y un código de 6 dígitos, la sesión vive en una cookie cifrada y no hay base de datos propia. La agencia ve los 29 negocios; cada cliente, solo los suyos y solo los módulos que tiene habilitados.',
+          'Agente de IA por WhatsApp para una aseguradora, en producción: cotiza, pide los datos en un solo mensaje, guía el reporte de siniestros por 13 ramos con un flujo de cinco pasos y agenda citas por Google Meet en el calendario del CRM.',
+          'Pausa por humano: si un asesor contesta desde su celular, el bot se aparta 12 horas. El CRM no lo detecta con WhatsApp en coexistencia, así que lo resolví con código propio dentro de sus flujos de automatización.',
+          'Ventas automáticas para una marca de cursos en línea: cada compra o carrito abandonado en Hotmart crea el contacto en el CRM, lo etiqueta y dispara el correo que corresponde.',
+          'El sitio nuevo de Daleen en Next.js: efectos WebGL hechos a mano, tres temas, buscador de dominios real (DNS con respaldo RDAP) y un formulario que deja el lead en el CRM. Lighthouse 95 · 96 · 100 · 100.'
         ]
       },
       medispro: {
@@ -347,21 +343,21 @@ export const content = {
       items: [
         {
           period: '2026 — hoy',
+          logo: '/logos/daleen.svg',
+          org: 'Daleen',
+          note: 'Grupo MindMarks · antes Zakumi Estudio',
+          role: 'CTO',
+          body: 'Fundé Zakumi Estudio en junio de 2026 y en septiembre se fusionó con Daleen. Llevo la tecnología: el portal sobre el CRM de 29 negocios, los agentes de IA por WhatsApp que atienden clientes reales y el sitio nuevo.',
+          tags: ['Next.js', 'Claude', 'Daleen CRM', 'WhatsApp']
+        },
+        {
+          period: '2026',
           logo: '/logos/tethered.svg',
           org: 'ConsiliumBots · Tether Education',
           note: 'con la Pontificia Universidad Javeriana',
           role: 'Full Stack & AI Engineer',
-          body: 'Plataformas de investigación y producto educativo: el constructor de encuestas Module Flow Engine, la validación de datos por agentes de voz de LUCI y la app de producto de Tether Studio.',
+          body: 'Construí plataformas de investigación y producto educativo: el constructor de encuestas Module Flow Engine, la validación de datos por agentes de voz de LUCI y la app de Tether Studio.',
           tags: ['React', 'TypeScript', 'Supabase', 'ElevenLabs', 'PostgreSQL']
-        },
-        {
-          period: '2026 — hoy',
-          logo: '/logos/zakumi.webp',
-          org: 'Zakumi Estudio',
-          note: 'empresa propia',
-          role: 'Fundador · Ingeniero principal',
-          body: 'Estudio AI-first: agentes de venta y atención por WhatsApp, CRM con IA multi-modelo y el centro de control que lo opera. Del código al cliente que firma.',
-          tags: ['Next.js', 'Claude', 'Supabase', 'Google Places']
         },
         {
           period: '2025 — 2026',
@@ -455,7 +451,7 @@ export const content = {
     },
 
     footer: {
-      tagline: 'Full Stack & AI Engineer · Bogotá, Colombia',
+      tagline: 'CTO de Daleen · Full Stack & AI Engineer · Bogotá, Colombia',
       rights: 'Todos los derechos reservados.',
       built: 'Hecho con React, GSAP y React Bits.'
     }
@@ -467,7 +463,7 @@ export const content = {
     meta: {
       title: 'Tomás Munévar — Full Stack & AI Engineer',
       description:
-        'Software engineer with 4+ years shipping AI platforms to production. TypeScript, LLMs, voice agents and the infrastructure that keeps them up. Currently working with Pontificia Universidad Javeriana, ConsiliumBots and Tether Studio from Bogotá.'
+        'CTO at Daleen. Four-plus years building AI products: WhatsApp and voice agents, CRM, health and education platforms, and the infrastructure that keeps them up. Based in Bogotá.'
     },
 
     nav: {
@@ -480,12 +476,12 @@ export const content = {
     },
 
     hero: {
-      eyebrow: 'Full Stack · AI · Product',
-      titleA: 'I build AI platforms for ',
-      titleAccent: 'health, education and fintech.',
+      eyebrow: 'CTO · AI · Product',
+      titleA: 'I build the AI and software that ',
+      titleAccent: 'help businesses grow.',
       titleB: '',
-      roles: ['Full Stack Engineer', 'AI / LLM Engineer', 'Product Engineer'],
-      lede: '+4 years building product end to end: TypeScript, AI agents, and the infrastructure that keeps them standing. Today I work with Pontificia Universidad Javeriana, ConsiliumBots and Tether Studio on platforms used by governments, schools and clinics.',
+      roles: ['CTO · Daleen', 'AI / LLM Engineer', 'Full Stack Engineer'],
+      lede: 'Four-plus years building product end to end. Today I am CTO at Daleen, where I run the CRM, the WhatsApp AI agents and the software behind 25+ businesses in Colombia, Panama and the United States. Before that I built AI platforms for health and education with Nebula, ConsiliumBots and Pontificia Universidad Javeriana.',
       ctaWork: 'See the work',
       ctaTalk: "Let's talk",
       available: 'Open to senior roles · remote',
@@ -496,7 +492,7 @@ export const content = {
       { text: '+4 years', label: 'building product end to end' },
       { value: 12, suffix: '', label: 'Products in production' },
       { value: 5, suffix: '', label: 'Industries: health, education, fintech, retail, media' },
-      { value: 3, suffix: '', label: 'Countries: Colombia, Chile, Spain' }
+      { value: 5, suffix: '', label: 'Countries: Colombia, Panama, United States, Chile, Spain' }
     ],
 
     trust: { label: 'Built with' },
@@ -505,23 +501,23 @@ export const content = {
       eyebrow: 'About',
       title: 'My job is to make things exist.',
       reveal:
-        'An agent that calls people on the phone and updates a database. A system that turns a doctor visit into a clinical note. A survey engine behind a Yale research study with Universidad Javeriana. I write the code, and I also decide what needs building: I pick the technology after I understand the problem, never before.',
+        'An agent that serves an insurance broker’s customers over WhatsApp and books their appointment. An agent that calls people on the phone and updates a database. A system that turns a doctor visit into a clinical note. A survey engine behind a Yale research study with Universidad Javeriana. I write the code, and I also decide what needs building: I pick the technology after I understand the problem, never before.',
       body: [
         'I am a full stack engineer specialised in TypeScript and in taking language models to real production: with spend caps, traces, prompt versioning, row-level permissions and a plan for when the provider goes down.',
-        'I have worked in digital health (FHIR/HL7, clinical transcription), in education research with universities and public institutions, in fintech, and in my own company. Every time the job was the same: understand the business, decide the architecture, write it, keep it alive.',
+        'I have worked in digital health (FHIR/HL7, clinical transcription), in education research with universities and public institutions, in fintech, and in my own company, Zakumi Estudio, which is now part of Daleen. Every time the job was the same: understand the business, decide the architecture, write it, keep it alive.',
         'I write things down, document them and leave the work ready for someone else to pick up. Native Spanish, C1 English.'
       ],
       nowLabel: 'Right now',
       now: [
-        'Voice agents that call childcare centres and update their records, on LUCI.',
-        'The Zakumi control centre: prospecting, billing and bots in one panel.',
-        'Conditional surveys for education research, in use across three countries.'
+        'An AI agent that serves an insurance broker’s customers over WhatsApp, claims included.',
+        'The Daleen CRM portal: one login for the agency and its 29 businesses.',
+        'Sales automations for Daleen clients: purchases, abandoned carts and new-lead alerts.'
       ],
       factsLabel: 'Facts',
       facts: [
         ['Based in', 'Bogotá, Colombia · remote'],
         ['Languages', 'Spanish native · English C1'],
-        ['Focus', 'Applied AI, product and platform'],
+        ['Now', 'CTO at Daleen'],
         ['Available for', 'Senior full stack / AI roles']
       ]
     },
@@ -532,8 +528,8 @@ export const content = {
       items: [
         {
           title: 'AI systems in production',
-          body: 'Multi-model orchestration (Anthropic, OpenAI, Gemini) with LangChain and LangSmith, voice with Deepgram and ElevenLabs, prompt versioning with diff and rollback, dry-run when a secret is missing, and daily spend caps.',
-          tags: ['LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG', 'Evals']
+          body: 'WhatsApp agents that sell, support and book appointments, wired to the CRM. Multi-model orchestration (Anthropic, OpenAI, Gemini) with LangChain and LangSmith, voice with Deepgram and ElevenLabs, prompt versioning with diff and rollback, dry-run when a secret is missing, and daily spend caps.',
+          tags: ['WhatsApp', 'LangChain', 'Anthropic', 'OpenAI', 'Gemini', 'Deepgram', 'ElevenLabs', 'RAG']
         },
         {
           title: 'End-to-end product engineering',
@@ -547,7 +543,7 @@ export const content = {
         },
         {
           title: 'Product judgment and leadership',
-          body: 'Specs, ADRs and issues ready for someone else to pick up. I have led full product pivots alongside founders and researchers, and been the bridge between the engineering team and whoever signs the cheque.',
+          body: 'Today I run technology at Daleen. Specs, ADRs and issues ready for someone else to pick up. I have led full product pivots alongside founders and researchers, and been the bridge between the engineering team and whoever signs the cheque.',
           tags: ['PRDs', 'ADRs', 'Discovery', 'Mentoring', 'Client-facing']
         }
       ]
@@ -619,17 +615,17 @@ export const content = {
           'Private per-school buckets, signed URLs, email validation and phone confirmation by code.'
         ]
       },
-      zakumi: {
-        role: 'Founder · Principal engineer',
-        tagline: 'AI-first studio and its control centre',
+      daleen: {
+        role: 'CTO',
+        tagline: 'CRM, AI agents and software for businesses',
         summary:
-          'My own company: AI agents that sell and support over WhatsApp, plus the admin panel where prospecting, billing and operations happen.',
+          'Daleen sells CRM, AI agents and custom software to 25+ businesses in Colombia, Panama and the United States. In September 2026 my company, Zakumi Estudio, merged into Daleen: its WhatsApp and voice agents now power the AI assistant, and I run the technology.',
         highlights: [
-          'WhatsApp agent powered by Claude, deployed and handling real businesses.',
-          'Control centre with a Google Places prospecting map and a CRM whose pipeline writes automatic notes via database triggers.',
-          'Bot console: prompt editor with side-by-side diff and rollback, test chat, health indicator and emergency shutdown.',
-          'Customer 360 view with recurring revenue, contracted products and an upsell engine.',
-          'Registered business in Bogotá. Brand, design and GSAP landing are mine too.'
+          'A custom portal on top of Daleen CRM: you sign in with your CRM email and a 6-digit code, the session lives in an encrypted cookie, and there is no database of our own. The agency sees all 29 businesses; each client sees only theirs, and only the modules they have enabled.',
+          'A WhatsApp AI agent for an insurance broker, in production: it quotes, asks for the data in a single message, walks customers through claims across 13 lines with a five-step flow, and books Google Meet appointments in the CRM calendar.',
+          'Human handoff: when an advisor replies from their phone, the bot steps aside for 12 hours. The CRM cannot detect that with WhatsApp coexistence, so I solved it with custom code inside its automation workflows.',
+          'Automated sales for an online course brand: every Hotmart purchase or abandoned cart creates the contact in the CRM, tags it and triggers the right email.',
+          'Daleen’s new Next.js site: hand-built WebGL effects, three themes, a real domain search (DNS with RDAP fallback) and a form that lands the lead in the CRM. Lighthouse 95 · 96 · 100 · 100.'
         ]
       },
       medispro: {
@@ -664,21 +660,21 @@ export const content = {
       items: [
         {
           period: '2026 — now',
+          logo: '/logos/daleen.svg',
+          org: 'Daleen',
+          note: 'MindMarks group · formerly Zakumi Estudio',
+          role: 'CTO',
+          body: 'I founded Zakumi Estudio in June 2026 and in September it merged into Daleen. I run the technology: the portal on top of the CRM for 29 businesses, the WhatsApp AI agents serving real customers, and the new site.',
+          tags: ['Next.js', 'Claude', 'Daleen CRM', 'WhatsApp']
+        },
+        {
+          period: '2026',
           logo: '/logos/tethered.svg',
           org: 'ConsiliumBots · Tether Education',
           note: 'with Pontificia Universidad Javeriana',
           role: 'Full Stack & AI Engineer',
-          body: 'Research and education product platforms: the Module Flow Engine survey builder, LUCI voice-agent data validation, and the Tether Studio product app.',
+          body: 'Built research and education product platforms: the Module Flow Engine survey builder, LUCI voice-agent data validation, and the Tether Studio app.',
           tags: ['React', 'TypeScript', 'Supabase', 'ElevenLabs', 'PostgreSQL']
-        },
-        {
-          period: '2026 — now',
-          logo: '/logos/zakumi.webp',
-          org: 'Zakumi Estudio',
-          note: 'my own company',
-          role: 'Founder · Principal engineer',
-          body: 'AI-first studio: WhatsApp sales and support agents, a multi-model AI CRM, and the control centre that runs it. From the code to the client who signs.',
-          tags: ['Next.js', 'Claude', 'Supabase', 'Google Places']
         },
         {
           period: '2025 — 2026',
@@ -772,7 +768,7 @@ export const content = {
     },
 
     footer: {
-      tagline: 'Full Stack & AI Engineer · Bogotá, Colombia',
+      tagline: 'CTO at Daleen · Full Stack & AI Engineer · Bogotá, Colombia',
       rights: 'All rights reserved.',
       built: 'Built with React, GSAP and React Bits.'
     }

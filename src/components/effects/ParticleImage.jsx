@@ -9,7 +9,7 @@ import { Geometry, Mesh, Program, Renderer } from 'ogl';
 
 const VERT = /* glsl */ `
 attribute vec2 position;
-attribute vec3 aColor;
+attribute vec4 aColor;
 attribute vec4 aSeed;
 
 uniform float uTime;
@@ -27,7 +27,7 @@ varying vec3 vColor;
 varying float vAlpha;
 
 void main() {
-  vColor = clamp(aColor * uBrightness, 0.0, 1.0);
+  vColor = clamp(aColor.rgb * uBrightness, 0.0, 1.0);
 
   // Posición dispersa: cada partícula sale disparada en su propia dirección,
   // con un giro que depende de la distancia al centro (de ahí el remolino).
@@ -73,7 +73,9 @@ void main() {
 
   // En reposo las partículas son opacas y del mismo tamaño: así la foto se
   // lee limpia. El desorden sólo existe mientras se está armando.
-  vAlpha = eased * (1.0 + influence * 0.35);
+  // aColor.a = transparencia del PNG: un retrato recortado se disuelve en sus
+  // bordes en vez de cortarse en seco.
+  vAlpha = eased * aColor.a * (1.0 + influence * 0.35);
 
   gl_Position = vec4(pos * uScale, 0.0, 1.0);
   float sizeJitter = mix(0.55 + aSeed.z * 0.9, 1.0, eased);
@@ -125,6 +127,8 @@ const ParticleImage = ({
   pointerPush = 0.075,
   /** Segundos que tarda en armarse. */
   assemble = 2.4,
+  /** Desenfoque previo al muestreo (px). Una imagen limpia aguanta menos. */
+  prefilterBlur = 1.3,
   className = ''
 }) => {
   const hostRef = useRef(null);
@@ -157,10 +161,17 @@ const ParticleImage = ({
       const ctx = sampler.getContext('2d', { willReadFrequently: true });
       // Un pelo de desenfoque antes de muestrear quita el ruido del JPEG, que
       // de otro modo se convierte en partículas de colores al azar.
-      ctx.filter = 'blur(1.3px) saturate(1.14) contrast(1.05)';
+      ctx.filter = `blur(${prefilterBlur}px) saturate(1.14) contrast(1.05)`;
       ctx.drawImage(img, 0, 0, cols, rows);
       ctx.filter = 'none';
       const { data } = ctx.getImageData(0, 0, cols, rows);
+      let hasAlpha = false;
+      for (let i = 3; i < data.length; i += 4 * 97) {
+        if (data[i] < 250) {
+          hasAlpha = true;
+          break;
+        }
+      }
 
       const positions = [];
       const colors = [];
@@ -176,11 +187,13 @@ const ParticleImage = ({
           const r = data[i] / 255;
           const g = data[i + 1] / 255;
           const b = data[i + 2] / 255;
-          // Los píxeles casi negros no aportan y sí cuestan: fuera.
-          if (r + g + b < 0.09) continue;
+          // En una foto opaca, los píxeles casi negros son fondo: fuera. En un
+          // recorte con alfa el fondo ya es transparente y el negro es ropa o
+          // pelo; quitarlo abriría huecos por donde se ve la luz de atrás.
+          if (a === 255 && r + g + b < 0.09 && !hasAlpha) continue;
 
           positions.push((x / (cols - 1)) * 2 - 1, -((y / (rows - 1)) * 2 - 1));
-          colors.push(r, g, b);
+          colors.push(r, g, b, a / 255);
           seeds.push(Math.random(), Math.random(), Math.random(), Math.random());
         }
       }
@@ -210,7 +223,7 @@ const ParticleImage = ({
 
       const geometry = new Geometry(gl, {
         position: { size: 2, data: new Float32Array(positions) },
-        aColor: { size: 3, data: new Float32Array(colors) },
+        aColor: { size: 4, data: new Float32Array(colors) },
         aSeed: { size: 4, data: new Float32Array(seeds) }
       });
 
@@ -328,7 +341,7 @@ const ParticleImage = ({
         gl.getExtension('WEBGL_lose_context')?.loseContext();
       }
     };
-  }, [src, resolution, minColumns, maxColumns, overlap, dispersion, brightness, pointerRadius, pointerPush, assemble]);
+  }, [src, resolution, minColumns, maxColumns, overlap, dispersion, brightness, pointerRadius, pointerPush, assemble, prefilterBlur]);
 
   if (failed) {
     return <img className={className} src={src} alt={alt} />;
